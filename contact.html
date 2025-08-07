@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+    <main class="container">
+        <h1>Contact Us</h1>
+        <div class="contact-wrapper">
+            <section class="info">
+                <h2>Our Office</h2>
+                <p>
+                    90 Thabo Zuma Street <br>
+                    Polokwane Central, 0799 <br>
+                    Email: <a href="mailto:general@Portifolio.co.za">general@Portifolio.co.za</a> <br>
+                    Phone: <a href="tel:+27646655890">+27 646655890</a>
+                </p>
+            </section>
+
+            <section class="form-section">
+                <form method="post" action="index.html">
+                    <fieldset>
+                        <label for="first-name">First Name:
+                            <input id="first-name" name="first-name" type="text" required />
+                        </label>
+                        <label for="last-name">Last Name:
+                            <input id="last-name" name="last-name" type="text" required />
+                        </label>
+                        <label for="email">Email:
+                            <input id="email" name="email" type="email" required />
+                        </label>
+                        <label for="bio">Comment:
+                            <textarea id="bio" name="bio" rows="4" placeholder="Your message here..."></textarea>
+                        </label>
+                        <label class="checkbox-label" for="terms-and-conditions">
+                            <input class="inline" id="terms-and-conditions" type="checkbox" required />
+                            I accept the <a href="Privacy.html" target="_blank">terms and conditions</a>
+                        </label>
+                        <div class="button-group">
+                            <button type="submit">Submit</button>
+                            <a href="index.html" class="button-secondary">Go Back</a>
+                        </div>
+                    </fieldset>
+                </form>
+            </section>
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,153 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #1D976C;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color:white;
+}
+
+main {
+    margin: 80px auto;
+    padding: 30px;
+    width: 90%;
+    max-width: 800px;
+    background-color: #16A085;
+    border-radius: 10px;
+}
+
+h2 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 5px;
+}
+
+.paragraph1 {
+    text-align: center;
+}
+
+.subtitle {
+    text-align: center;
+    color: rgb(196, 182, 182);
+    margin-bottom: 30px;
+    font-size: 16px;
+}
+
+#tabs {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+    gap: 10px;
+}
+
+.tabs-btn {
+    flex: 1 1 auto;
+    padding: 12px 10px;
+    background-color: #71B280;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.btn {
+  flex: 1 1 auto;
+    padding: 12px 10px;
+    background-color: #71B280;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.active, .btn:hover {
+  background-color: #93EDC7;
+  color: white;
+}
+
+.section-title {
+    font-size: 20px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #444;
+}
+
+.internet-speed {
+    margin-bottom: 20px;
+}
+
+.internet-speed label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 500;
+}
+
+input {
+    width: 180px;
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    transition: border 0.2s;
+    margin-right: 15px;
+}
+
+input:hover {
+    border: 2px solid #93EDC7;
+    
+}
+
+select {
+    width: 450px;
+    padding: 8px 10px;
+    border-radius: 6px;
+    border: none;
+    background-color: #e2dcdc;
+    font-size: 14px;
+}
+
+.calculate-button {
+    margin-top: 10px;
+    margin-bottom: 25px;
+}
+
+.calculate-button > button, #temperature-content > button {
+    padding: 10px 25px;
+    font-size: 15px;
+    background-color: #71B280;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 600px;
+}
+#temperature-content > button{
+    width: 300px;
+    margin-top: 15px;
+}
+.calculate-button > button:hover , #temperature-content > button:hover {
+    background-color: #93EDC7;
+    color:black;
+}
+
+.estimate-time {
+    border-left: 10px solid #93F9B9;
+    background-color: #eee;
+    padding: 15px;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 16px;
+    color:black;
+}
+.estimate-time > p{
+    font-weight: lighter;
+    
+}
+.tab-content {
+    display: none;
+}
+.active-content {
+    display: block;
+}
+.file-size{
+    padding-bottom: 6px;
+}

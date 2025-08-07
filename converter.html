@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Converter Hub Web App</title>
+    <link rel="stylesheet" href="convertor.css" />
+    <style>
+        .tab-content {
+            display: none;
+        }
+        .active-content {
+            display: block;
+        }
+        .tabs-btn.active {
+            background-color: #007bff;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h2>Convertor Hub</h2>
+        <p class="paragraph1">A collection of useful conversion tools</p>
+
+        <div id="tabs">
+            <button class="tabs-btn active fileTran">File Transfer</button>
+            <button class="tabs-btn temp">Temperature</button>
+            <button class="tabs-btn scientific">Scientific</button>
+            <button class="tabs-btn metrix">Metric</button>
+        </div>
+
+        <div id="file-transfer-content" class="tab-content active-content">
+            <p class="paragraph2">File Transfer Time Calculator</p>
+            <div class="file-size">
+                <input type="number" id="size-type" name="size" required />
+                <select name="size-speed" id="size-speed">
+                    <option value="gigabytes">Gigabytes (GB)</option>
+                    <option value="megabytes">Megabytes (MB)</option>
+                    <option value="kilobytes">Kilobytes (KB)</option>
+                </select>
+            </div>
+            <div class="internet-speed">
+                <input type="number" id="speed" name="speed" required />
+                <select name="speed-name" id="speed-name">
+                    <option value="megabits">Megabits/sec (Mbps)</option>
+                    <option value="gigabits">Gigabits/sec (Gbps)</option>
+                    <option value="kilobits">Kilobits/sec (Kbps)</option>
+                </select>
+            </div>
+            <div class="calculate-button">
+                <button onclick="calculate()">Calculate</button>
+            </div>
+            <div class="estimate-time">
+                <label for="time-estimated" id="time-estimated">Estimated Time:</label><br>
+                <p></p>
+            </div>
+        </div>
+
+        <div id="temperature-content" class="tab-content">
+            <p>Temperature Converter</p>
+            <input type="number" id="temp-input" placeholder="Enter temperature" />
+            <select id="temp-unit">
+                <option value="celsius">Celsius</option>
+                <option value="fahrenheit">Fahrenheit</option>
+                <option value="kelvin">Kelvin</option>
+            </select>
+            <button onclick="convertTemperature()">Convert</button>
+            <p id="temp-result"></p>
+        </div>
+    </main>
+
+    <script src="converter.js"></script>
+</body>
+</html>
