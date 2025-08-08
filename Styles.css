@@ -26,66 +26,105 @@ ul {
     gap: 50px;
 }
 
-.navbar > ul > li {
+.navbar>ul>li {
     list-style: none;
 }
 
-.navbar > ul > li a {
+.navbar>ul>li a {
     text-decoration: none;
     color: black;
 }
 
-.navbar > ul > li a:hover {
+.navbar>ul>li a:hover {
     color: rgb(61, 173, 211);
 }
-
-.heroSection {
+.navbar > p{
+     font-style: italic;
+}
+.starting {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-}
-
-.herotext {
-    font-size: 15px;
-    padding: 20px;
-    text-align: center;
-    margin: 50px;
-    flex: 1;
-}
-
-.heroimage {
-    flex: 1;
-    text-align: center;
-    padding: 20px;
-}
-
-.heroimage > img {
     width: 100%;
-    height: auto;
-    display: block;
-    object-fit: contain;
-    margin: 0 auto;
+    margin-top: 100px;
 }
 
-.cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-    padding: 30px 40px;
-    background-color: lightgreen;
+.starting>.intro>h1 {
+    font-size: 20px;
+
 }
 
-.cards > div {
-    color: white;
+.starting>.intro>p {
+    font-size: 16px;
+   
+}
+
+.starting>.intro>button {
+    margin-left: 120px;
+    margin-top: 100px;
+    width: 100px;
+    height: 40px;
+    border-radius: 6px;
+    border: none;
     background-color: black;
-    border-radius: 10px;
-    width: 100%;
-    padding: 15px;
-    max-width: 350px;
-    height: auto;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.intro {
+    width: 50%;
+    margin-left: 100px;
+
+
+}
+.starting>.intro> h1 > .greeting{
+    font-weight: lighter;
+}
+.starting>.intro> h1 > .myName{
+    font-weight: bolder;
+    color: orange;
+}
+#picture {
+    width: 300px;
+    height: 300px;
+}
+
+.picture {
+    width: 50%;
+}
+.navbar > p{
+    font-size: 25px;
+}
+.technology {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+    max-width: 800px;
+    margin-left: 150px;
+}
+.tools{
+    margin-left: 40px;
+}
+.tech {
+    background-color: black;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    width: 350px;
+    height: 200px;
+}
+.tech p{
+    color: white;
+}
+.tech:hover {
+    transform: scale(1.05);
+}
+
+.tech h3 {
+    margin:0;
+    font-size: 1.2rem;
+    color: white;
+    text-align: center;
 }
 
 footer {
@@ -103,26 +142,46 @@ footer {
     padding: 5px 20px;
 }
 
-.second > ul {
+.second>ul {
     list-style: none;
     display: flex;
     gap: 10px;
 }
 
-.second > ul > li > a {
+.second>ul>li>a {
     text-decoration: none;
     color: white;
 }
+.card-container {
+  display: flex;
+ gap: 20px;
+  justify-content: center;
+  padding: 20px;
+  width: 100%;
 
-.logo {
-    width: 100px;
-    height: 100px;
-    border-radius: 20px;
 }
 
-.heroSection > .herotext > p {
-    text-align: center;
+.card {
+  background-color: black;
+  border-radius: 10px;
+  padding: 20px;
+  width: 250px;
 }
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card h3 {
+  margin-top: 0;
+  color: white;
+}
+.card-container > p{
+    font-size: 25px;
+    font-weight: bold;
+    margin-left: 350px;
+}
+
 
 
 @media (max-width: 1024px) {
@@ -131,14 +190,7 @@ footer {
         margin-right: 20px;
     }
 
-    .heroSection {
-        flex-direction: column;
-    }
 
-    .herotext {
-        margin: 20px;
-        text-align: center;
-    }
 }
 
 @media (max-width: 768px) {
@@ -154,41 +206,17 @@ footer {
         margin: 10px 0;
     }
 
-    .cards {
-        flex-direction: column;
-        align-items: center;
-    }
 
-    .cards > div {
-        max-width: 90%;
-    }
 }
 
 @media (max-width: 480px) {
-    .herotext {
-        font-size: 18px;
-        letter-spacing: 0.1em;
-        margin: 10px;
-    }
 
-    .cards {
-        padding: 20px 10px;
-        gap: 10px;
-    }
-
-    .cards > div {
-        font-size: 16px;
-        padding: 10px;
-    }
 
     .navbar {
         font-size: 12px;
     }
 
-    .logo {
-        width: 80px;
-        height: 80px;
-    }
+
 
     .footerSection {
         flex-direction: column;
