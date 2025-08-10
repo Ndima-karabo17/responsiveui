@@ -24,7 +24,17 @@
         <div class="intro">
         <h1><span class="greeting">Hello, I am </span><span class="myName"> Ndima Mhangwani</span></h1>
         <p>A software developer and software engineering <br>learner working on improving my skills.</p>
-        <button>Hire Me</button>
+        <button id="hire">Hire Me</button>
+        <div id="hireForm" style="display:none;">
+  <form id="contactForm">
+    <label for="name">Name:</label><br>
+    <input type="text" id="name" name="name" required><br>
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email" required><br><br>
+    <button type="submit">Submit</button>
+  </form>
+</div>
+
     </div>
     <div class="picture">
         <img src="images/profile.jpg" alt="An image of me" id="picture">
@@ -131,6 +141,7 @@
 
         </section>
     </footer>
+    <script src="portfolio.js"></script>
 </body>
 
 </html>
