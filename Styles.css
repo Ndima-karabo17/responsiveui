@@ -82,9 +82,13 @@ ul {
     cursor: pointer;
 }
 
-.starting>.intro>h1>.greeting,
+.starting>.intro>h1>.greeting{
+    font-weight: lighter;
+}
 .starting>.intro>h1>.myName {
-    color: #333333;
+    color: #32127A;
+  
+
 }
 
 #picture {
@@ -200,7 +204,7 @@ footer {
     color: #333333;
 }
 
-/* Responsive tweaks */
+
 @media (max-width: 1024px) {
     .navbar ul {
         margin-left: auto;
