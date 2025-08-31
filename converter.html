@@ -13,8 +13,8 @@
             display: block;
         }
         .tabs-btn.active {
-            background-color: #007bff;
-            color: white;
+            background-color: #d6f6f9;
+            color: black;
         }
     </style>
 </head>
@@ -68,6 +68,41 @@
             <button onclick="convertTemperature()">Convert</button>
             <p id="temp-result"></p>
         </div>
+   
+
+<div id="scientific-content" class="tab-content">
+    <p>Scientific Notation Converter</p>
+    <input type="number" id="sci-input" placeholder="Enter a number" />
+    <button onclick="convertToScientific()">Convert</button>
+    <p id="sci-result"></p>
+</div>
+
+
+<div id="metric-content" class="tab-content">
+    <p>Metric Prefix Converter</p>
+    <input type="number" id="metric-input" placeholder="Enter value" />
+    <select id="metric-from">
+        <option value="giga">Giga (G)</option>
+        <option value="mega">Mega (M)</option>
+        <option value="kilo">Kilo (k)</option>
+        <option value="base">Base</option>
+        <option value="milli">Milli (m)</option>
+        <option value="micro">Micro (μ)</option>
+        <option value="nano">Nano (n)</option>
+    </select>
+    <select id="metric-to">
+        <option value="giga">Giga (G)</option>
+        <option value="mega">Mega (M)</option>
+        <option value="kilo">Kilo (k)</option>
+        <option value="base">Base</option>
+        <option value="milli">Milli (m)</option>
+        <option value="micro">Micro (μ)</option>
+        <option value="nano">Nano (n)</option>
+    </select>
+    <button onclick="convertMetric()">Convert</button>
+    <p id="metric-result"></p>
+</div>
+
     </main>
 
     <script src="converter.js"></script>
