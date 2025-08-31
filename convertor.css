@@ -1,9 +1,9 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #1D976C;
+    background-color: #C5F6FA;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color:white;
+    color:black;
 }
 
 main {
@@ -11,7 +11,7 @@ main {
     padding: 30px;
     width: 90%;
     max-width: 800px;
-    background-color: #16A085;
+    background-color: #acebf1;
     border-radius: 10px;
 }
 
@@ -43,7 +43,7 @@ h2 {
 .tabs-btn {
     flex: 1 1 auto;
     padding: 12px 10px;
-    background-color: #71B280;
+    background-color: #8ee7ef;
     border: none;
     border-radius: 8px;
     font-size: 15px;
@@ -92,7 +92,7 @@ input {
 }
 
 input:hover {
-    border: 2px solid #93EDC7;
+    border: 2px solid #C5F6FA;
     
 }
 
@@ -113,8 +113,8 @@ select {
 .calculate-button > button, #temperature-content > button {
     padding: 10px 25px;
     font-size: 15px;
-    background-color: #71B280;
-    color: white;
+    background-color: #7bdfe9;
+    color: black;
     border: none;
     border-radius: 6px;
     cursor: pointer;
@@ -125,12 +125,12 @@ select {
     margin-top: 15px;
 }
 .calculate-button > button:hover , #temperature-content > button:hover {
-    background-color: #93EDC7;
+    background-color: #ccf4f8;
     color:black;
 }
 
 .estimate-time {
-    border-left: 10px solid #93F9B9;
+    border-left: 10px solid #7bdfe9;
     background-color: #eee;
     padding: 15px;
     border-radius: 6px;
@@ -150,4 +150,16 @@ select {
 }
 .file-size{
     padding-bottom: 6px;
+}
+#scientific-content > button,
+#metric-content > button {
+    padding: 10px 25px;
+    font-size: 15px;
+    background-color: #7bdfe9;
+    color: black;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 15px;
+    width: 300px;
 }
