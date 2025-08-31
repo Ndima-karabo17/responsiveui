@@ -104,3 +104,54 @@ function convertTemperature() {
 
     document.getElementById("temp-result").textContent = result;
 }
+btns.forEach(btn => {
+    btn.addEventListener("click", () => {
+        btns.forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+
+        contents.forEach(c => c.classList.remove("active-content"));
+
+        if (btn.classList.contains("fileTran")) {
+            document.getElementById("file-transfer-content").classList.add("active-content");
+        } else if (btn.classList.contains("temp")) {
+            document.getElementById("temperature-content").classList.add("active-content");
+        } else if (btn.classList.contains("scientific")) {
+            document.getElementById("scientific-content").classList.add("active-content");
+        } else if (btn.classList.contains("metrix")) {
+            document.getElementById("metric-content").classList.add("active-content");
+        }
+    });
+});
+function convertToScientific() {
+    const input = parseFloat(document.getElementById("sci-input").value);
+    if (isNaN(input)) {
+        document.getElementById("sci-result").textContent = "Please enter a valid number.";
+    } else {
+        document.getElementById("sci-result").textContent = input.toExponential(2);
+    }
+}
+function convertMetric() {
+    const value = parseFloat(document.getElementById("metric-input").value);
+    const from = document.getElementById("metric-from").value;
+    const to = document.getElementById("metric-to").value;
+
+    const prefixes = {
+        giga: 1e9,
+        mega: 1e6,
+        kilo: 1e3,
+        base: 1,
+        milli: 1e-3,
+        micro: 1e-6,
+        nano: 1e-9
+    };
+
+    if (isNaN(value)) {
+        document.getElementById("metric-result").textContent = "Please enter a valid number.";
+        return;
+    }
+
+    const baseValue = value * prefixes[from];
+    const converted = baseValue / prefixes[to];
+
+    document.getElementById("metric-result").textContent = `${converted} (${to})`;
+}
