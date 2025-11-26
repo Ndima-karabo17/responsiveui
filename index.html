@@ -4,136 +4,254 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive UI Recreation</title>
-    <link rel="stylesheet" href="./Styles.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=rebase_edit" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+    <title>Ndima's Portfolio</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Devicon for technology icons (used to display skill logos) -->
+    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+    <!-- Font Awesome (kept only for general icons, social icons removed) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLMDJzL3m32XW2UfQO/9z8H2D5YI6K+L9D5v9L9Wp00+3w9v6k8Ww2z9M5uN5t5+4Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <style>
+        .devicon-plain {
+            font-size: 2.5rem;
+            transition: transform 0.3s ease;
+        }
+        .tech:hover .devicon-plain {
+            transform: scale(1.1);
+        }
+    </style>
 </head>
 
-<body>
-    <nav class="navbar">
-        <p>Ndima's Portfolio</p>
-        <ul>
-            <li><a href="">Home</a></li>
-            <li><a href="">About Me</a></li>
-            <li><a href="converter.html">Project</a></li>
-            <li><a href="contact.html">Contacts</a></li>
+<body class="bg-gray-900 text-gray-200 font-inter min-h-screen">
+
+    <nav class="navbar bg-gray-800 shadow-xl sticky top-0 z-50 p-4 flex justify-between items-center px-6 md:px-12">
+        <p class="text-xl font-bold text-teal-400">Ndima's Portfolio</p>
+        <ul class="flex space-x-6">
+            <li><a href="#" class="hover:text-teal-400 transition duration-300">Home</a></li>
+            <li><a href="#about-me" class="hover:text-teal-400 transition duration-300">About Me</a></li>
+            <li><a href="#projects" class="hover:text-teal-400 transition duration-300">Project</a></li>
         </ul>
     </nav>
-    <div class="starting">
-        <div class="intro">
-        <h1><span class="greeting">Hello, I am </span><span class="myName"> Ndima Mhangwani</span></h1><br>
-        <p>A software developer and software engineering <br>learner based in South Africa. Currently working <br> on improving my skills</p>
-        <button id="hire">Hire Me</button>
-    </div>
-    <div class="picture">
-        <img src="images/profile.jpg" alt="An image of me" id="picture">
-    </div>
-    </div>
-    <div class="icons">
-       <a href="https://web.whatsapp.com/"><i class="fa-brands fa-whatsapp" id="whatsapp"></i></a>
-       <a href="https://mail.google.com/mail/u/0/#inbox" id="gmail"><i class="fa-solid fa-envelope"></i></a>
-       <a href="https://www.linkedin.com/in/ndima-mhangwani-4761b332a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" id="linkedin"><i class="fa-brands fa-linkedin"></i></a>
-    </div>
-    <div class="card-container">
-        <p>WHAT I DO</p>
-  <div class="card">
-    <h3>Software Testing</h3>
-  
-  </div>
-  <div class="card">
-    <h3>Frontend Developer</h3>
-   
-  </div>
-  <div class="card">
-    <h3>Backend Developer</h3>
-   
-  </div>
-  <div class="card">
-    <h3>Web Designer</h3>
 
-  </div>
-</div>
-<hr>
-<div class="tools">
-    <h2>Skills & Technology</h2>
-    <p>The tools and technologies I use to bring ideas to life</p>
-</div>
-<div class="technology">
-    
-    <div class="tech">
-        <img src="images/html-pic.jpg" alt="html pic" id="pic">
-        <h3><span>HTML</span></h3>
-         <br>
-        <p>Sematic markup and modern web standard</p>
-    </div>
-    <div class="tech">
-        <img src="images/css-pic.png" alt="css pic" id="pic">
-        <h3><span>CSS</span></h3>
-         <br>
-        <p>Responsive design and modern layouts</p>
-    </div>
-<div class="tech">
-    <img src="images/js-pic.png" alt="JavaScript pic" id="pic">
-        <h3>JavaScript</h3>
-         <br>
-        <p>Dynamic layouts</p>
-    </div>
-<div class="tech">
-    <img src="images/python-pic.webp" alt="Python pic" id="pic">
-        <h3>Python</h3>
-         <br>
-        <p>Handling requests, processing data, and managing databases</p>
-    </div>
-<div class="tech">
-    <img src="images/java-pic.png" alt="Java pic" id="pic">
-        <h3>Java</h3>
-        <br>
-        <p>It handle business logic</p>
-    </div>
-    <div class="tech">
-        <img src="images/sql-pic.avif" alt="Sql pic" id="pic">
-        <h3>SQL</h3>
-        <br>
-        <p>Create, modify and extract data</p>
-    </div>
-    <div class="tech">
-        <img src="images/mySQL-pc.webp" alt="MySQL pic" id="pic">
-        <h3>MySQL</h3>
-        <br>
-       <p>Supports various data operations</p>
-    </div>
-    <div class="tech">
-        <img src="images/node-pic.png" alt="Node pic" id="pic">
-        <h3>Node.js</h3>
-         <br>
-        <p>Server-side JavaScript</p>
-    </div>
-    <div class="tech">
-        <img src="images/git-pic.png" alt="GitHub pic" id="pic">
-        <h3>GitHub</h3>
-         <br>
-        <p>Version controller and collaboration</p>
-    </div>
-</div>
-    <footer>
-        <section class="footerSection">
-            <div class="paragraph">
-                &copy;2025 All Right Reserverd.
+    <main class="container mx-auto p-4 md:p-10">
+
+        <div class="starting flex flex-col md:flex-row items-center justify-between py-16 md:py-24">
+            <div class="intro md:w-1/2 mb-10 md:mb-0">
+                <h1 class="text-4xl sm:text-5xl lg:text-7xl font-extrabold leading-tight">
+                    <span class="text-gray-400">Hello, I am </span>
+                    <span class="text-white bg-clip-text text-transparent bg-gradient-to-r from-teal-400 to-cyan-500">
+                        Ndima Mhangwani
+                    </span>
+                </h1>
+                <p class="text-lg text-gray-400 mt-4 leading-relaxed">
+                    A software developer and software engineering learner based in South Africa. <br> Currently working on improving my skills.
+                </p>
+                <button id="hire" class="mt-8 px-6 py-3 bg-teal-500 text-gray-900 font-semibold rounded-lg shadow-lg hover:bg-teal-400 transition duration-300 transform hover:scale-105">
+                    Hire Me (Download CV)
+                </button>
+            </div>
+            <div class="picture md:w-1/3">
+                <img src="images/profile.jpg" alt="An image of me" class="rounded-full w-64 h-64 object-cover mx-auto shadow-2xl border-4 border-teal-500">
+            </div>
+        </div>
+
+        <div class="card-container text-center py-16">
+            <p class="text-teal-400 text-sm font-semibold uppercase tracking-widest mb-2">My Focus</p>
+            <h2 class="text-3xl font-bold mb-10 text-white">WHAT I DO</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="card bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700 transition duration-300 hover:shadow-teal-500/30 hover:shadow-2xl">
+                    <h3 class="text-xl font-semibold text-teal-300">Software Testing</h3>
+                </div>
+                <div class="card bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700 transition duration-300 hover:shadow-teal-500/30 hover:shadow-2xl">
+                    <h3 class="text-xl font-semibold text-teal-300">Frontend Developer</h3>
+                </div>
+                <div class="card bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700 transition duration-300 hover:shadow-teal-500/30 hover:shadow-2xl">
+                    <h3 class="text-xl font-semibold text-teal-300">Backend Developer</h3>
+                </div>
+                <div class="card bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700 transition duration-300 hover:shadow-teal-500/30 hover:shadow-2xl">
+                    <h3 class="text-xl font-semibold text-teal-300">Web Designer</h3>
+                </div>
+            </div>
+        </div>
+
+        <hr class="border-gray-700 my-10">
+        
+        <div class="about-me-section py-16" id="about-me">
+            <h2 class="text-3xl font-bold mb-4 text-center text-white">About Me, Education, and Experience</h2>
+            
+            <p class="summary text-center max-w-3xl mx-auto text-gray-400 mb-12 p-4 bg-gray-800 rounded-lg shadow-inner">
+                I am a Software Developer and Engineering Learner dedicated to building robust and engaging web applications. Currently completing my studies at Tshwane University of Technology, I focus on developing my skills in modern frontend frameworks like React and essential backend languages like Python and Java. I am eager to apply my academic knowledge in a professional environment during my time at mlab Southern Africa.
+            </p>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div class="experience-card bg-gray-800 p-6 rounded-xl shadow-xl border border-gray-700">
+                    <h3 class="text-2xl font-semibold text-teal-400 mb-4 flex items-center"><i class="fa-solid fa-briefcase mr-3"></i> Work Experience</h3>
+                    <ul class="space-y-4">
+                        <li class="border-l-4 border-teal-500 pl-4">
+                            <h4 class="text-xl font-medium text-white">Software Developer / Intern</h4>
+                            <p class="text-gray-400 font-semibold mt-1">mlab Southern Africa | July 2025 – Present</p>
+                            <p class="text-sm text-gray-500 mt-1">Gaining hands-on experience in software development and contributing to real-world projects.</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="education-card bg-gray-800 p-6 rounded-xl shadow-xl border border-gray-700">
+                    <h3 class="text-2xl font-semibold text-teal-400 mb-4 flex items-center"><i class="fa-solid fa-graduation-cap mr-3"></i> Education</h3>
+                    <ul class="space-y-4">
+                        <li class="border-l-4 border-teal-500 pl-4">
+                            <h4 class="text-xl font-medium text-white">National Diploma / B-Tech (In Progress/Current)</h4>
+                            <p class="text-gray-400 font-semibold mt-1">Tshwane University of Technology (TUT) | 2022 – 2025/Present</p>
+                            <p class="text-sm text-gray-500 mt-1">Currently completing a qualification in a software engineering-related field.</p>
+                        </li>
+                        <li class="border-l-4 border-teal-500 pl-4">
+                            <h4 class="text-xl font-medium text-white">Matric Certificate</h4>
+                            <p class="text-gray-400 font-semibold mt-1">Gawula High School | Passed 2021</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <hr class="border-gray-700 my-10">
+
+        <div class="tools text-center py-16">
+            <h2 class="text-4xl font-bold mb-2 text-white">Skills & Technology</h2>
+            <p class="text-gray-400 mb-10">The tools and technologies I use to bring ideas to life</p>
+        </div>
+
+        <div class="technology grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 pb-20">
+            
+            <div class="tech bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700 text-center transition duration-300 hover:bg-gray-700/50">
+                <i class="devicon-react-plain colored text-5xl"></i>
+                <h3 class="text-lg font-semibold mt-3 text-white">React</h3>
+                <p class="text-xs text-gray-400 mt-1">Component-based UI development</p>
+            </div>
+            <div class="tech bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700 text-center transition duration-300 hover:bg-gray-700/50">
+                <i class="devicon-redux-plain colored text-5xl"></i>
+                <h3 class="text-lg font-semibold mt-3 text-white">Redux</h3>
+                <p class="text-xs text-gray-400 mt-1">Predictable state management</p>
+            </div>
+            <div class="tech bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700 text-center transition duration-300 hover:bg-gray-700/50">
+                <i class="devicon-tailwindcss-plain colored text-5xl"></i>
+                <h3 class="text-lg font-semibold mt-3 text-white">Tailwind CSS</h3>
+                <p class="text-xs text-gray-400 mt-1">Utility-first styling for rapid development</p>
+            </div>
+            <div class="tech bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700 text-center transition duration-300 hover:bg-gray-700/50">
+                <i class="devicon-html5-plain colored text-5xl"></i>
+                <h3 class="text-lg font-semibold mt-3 text-white">HTML</h3>
+                <p class="text-xs text-gray-400 mt-1">Sematic markup and modern web standard</p>
+            </div>
+            <div class="tech bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700 text-center transition duration-300 hover:bg-gray-700/50">
+                <i class="devicon-css3-plain colored text-5xl"></i>
+                <h3 class="text-lg font-semibold mt-3 text-white">CSS</h3>
+                <p class="text-xs text-gray-400 mt-1">Responsive design and modern layouts</p>
+            </div>
+            <div class="tech bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700 text-center transition duration-300 hover:bg-gray-700/50">
+                <i class="devicon-javascript-plain colored text-5xl"></i>
+                <h3 class="text-lg font-semibold mt-3 text-white">JavaScript</h3>
+                <p class="text-xs text-gray-400 mt-1">Dynamic layouts and client-side logic</p>
+            </div>
+
+            <div class="tech bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700 text-center transition duration-300 hover:bg-gray-700/50">
+                <i class="devicon-python-plain colored text-5xl"></i>
+                <h3 class="text-lg font-semibold mt-3 text-white">Python</h3>
+                <p class="text-xs text-gray-400 mt-1">Backend logic and data processing</p>
+            </div>
+            <div class="tech bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700 text-center transition duration-300 hover:bg-gray-700/50">
+                <i class="devicon-java-plain colored text-5xl"></i>
+                <h3 class="text-lg font-semibold mt-3 text-white">Java</h3>
+                <p class="text-xs text-gray-400 mt-1">Handling business logic</p>
+            </div>
+            <div class="tech bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700 text-center transition duration-300 hover:bg-gray-700/50">
+                <i class="devicon-nodejs-plain colored text-5xl"></i>
+                <h3 class="text-lg font-semibold mt-3 text-white">Node.js</h3>
+                <p class="text-xs text-gray-400 mt-1">Server-side JavaScript</p>
+            </div>
+            <div class="tech bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700 text-center transition duration-300 hover:bg-gray-700/50">
+                <i class="devicon-sqldeveloper-plain colored text-5xl"></i>
+                <h3 class="text-lg font-semibold mt-3 text-white">SQL</h3>
+                <p class="text-xs text-gray-400 mt-1">Create, modify and extract data</p>
+            </div>
+            <div class="tech bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700 text-center transition duration-300 hover:bg-gray-700/50">
+                <i class="devicon-mysql-plain colored text-5xl"></i>
+                <h3 class="text-lg font-semibold mt-3 text-white">MySQL</h3>
+                <p class="text-xs text-gray-400 mt-1">Supports various data operations</p>
+            </div>
+            
+            <div class="tech bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700 text-center transition duration-300 hover:bg-gray-700/50">
+                <i class="devicon-github-plain text-white text-5xl"></i>
+                <h3 class="text-lg font-semibold mt-3 text-white">GitHub</h3>
+                <p class="text-xs text-gray-400 mt-1">Version controller and collaboration</p>
+            </div>
+
+        </div>
+
+        <hr class="border-gray-700 my-10">
+
+        <div id="projects" class="projects-section py-16">
+            <h2 class="text-4xl font-bold mb-10 text-center text-teal-400">My Projects</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <div class="bg-gray-800 p-6 rounded-xl shadow-2xl border border-teal-500/50 hover:border-teal-400 transition duration-300">
+                    <h3 class="text-xl font-semibold text-white mb-3">Project Title: Web Converter</h3>
+                    <p class="text-gray-400 text-sm mb-4">A utility web application for unit or currency conversion.</p>
+                    <div class="flex flex-wrap gap-2 text-xs">
+                        <span class="bg-teal-700/50 text-teal-200 px-3 py-1 rounded-full">HTML</span>
+                        <span class="bg-teal-700/50 text-teal-200 px-3 py-1 rounded-full">CSS</span>
+                        <span class="bg-teal-700/50 text-teal-200 px-3 py-1 rounded-full">JavaScript</span>
+                    </div>
+                    <div class="mt-4 flex justify-end space-x-3">
+                        <a href="#" class="text-sm text-teal-400 hover:text-teal-300 font-medium">View Live</a>
+                        <a href="#" class="text-sm text-gray-500 hover:text-gray-400 font-medium">GitHub Repo</a>
+                    </div>
+                </div>
+
+                <div class="bg-gray-800 p-6 rounded-xl shadow-2xl border border-teal-500/50 hover:border-teal-400 transition duration-300">
+                    <h3 class="text-xl font-semibold text-white mb-3">Project Title: E-commerce Backend</h3>
+                    <p class="text-gray-400 text-sm mb-4">A robust backend system handling user authentication and product inventory.</p>
+                    <div class="flex flex-wrap gap-2 text-xs">
+                        <span class="bg-teal-700/50 text-teal-200 px-3 py-1 rounded-full">Python</span>
+                        <span class="bg-teal-700/50 text-teal-200 px-3 py-1 rounded-full">MySQL</span>
+                        <span class="bg-teal-700/50 text-teal-200 px-3 py-1 rounded-full">Node.js</span>
+                    </div>
+                    <div class="mt-4 flex justify-end space-x-3">
+                        <a href="#" class="text-sm text-teal-400 hover:text-teal-300 font-medium">View Live</a>
+                        <a href="#" class="text-sm text-gray-500 hover:text-gray-400 font-medium">GitHub Repo</a>
+                    </div>
+                </div>
+
+                <div class="bg-gray-800 p-6 rounded-xl shadow-2xl border border-teal-500/50 hover:border-teal-400 transition duration-300">
+                    <h3 class="text-xl font-semibold text-white mb-3">Project Title: React Dashboard</h3>
+                    <p class="text-gray-400 text-sm mb-4">A responsive data visualization dashboard built with React and Redux.</p>
+                    <div class="flex flex-wrap gap-2 text-xs">
+                        <span class="bg-teal-700/50 text-teal-200 px-3 py-1 rounded-full">React</span>
+                        <span class="bg-teal-700/50 text-teal-200 px-3 py-1 rounded-full">Redux</span>
+                        <span class="bg-teal-700/50 text-teal-200 px-3 py-1 rounded-full">Tailwind CSS</span>
+                    </div>
+                    <div class="mt-4 flex justify-end space-x-3">
+                        <a href="#" class="text-sm text-teal-400 hover:text-teal-300 font-medium">View Live</a>
+                        <a href="#" class="text-sm text-gray-500 hover:text-gray-400 font-medium">GitHub Repo</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-gray-800 border-t border-gray-700 mt-10">
+        <section class="footerSection container mx-auto p-6 md:p-10 flex flex-col sm:flex-row justify-between items-center text-sm text-gray-400">
+            <div class="paragraph mb-4 sm:mb-0">
+                &copy; 2025 All Rights Reserved.
             </div>
             <div class="second">
-                <ul>
-                    <li><a href="contact.html">Contacts</a></li>
-                    <br>
-                    <li><a href="Privacy.html">Privacy Policy</a></li>
-                </ul>
             </div>
-
         </section>
     </footer>
+
     <script src="portfolio.js"></script>
 </body>
 
 </html>
-
-
