@@ -6,59 +6,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ndima's Portfolio</title>
     
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                   colors: { 
-              
-                'dark-bg-primary': '#0F172A', 
-                'dark-bg-secondary': '#1E293B', 
-                'dark-text-default': '#E2E8F0', 
-                'dark-accent': '#2DD4BF', 
-            }
-                }
-            }
-        }
-    </script>
     <script src="https://cdn.tailwindcss.com"></script>
     
     <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
     <style>
-       
+        /* Base styles for icons and hover transition */
         .devicon-plain {
             font-size: 2.5rem;
             transition: transform 0.3s ease;
         }
+        
+        /* Original hover effect (retained for fallback) */
         .tech:hover .devicon-plain {
             transform: scale(1.1);
         }
-    </style> 
+
+        /* ----------------------------------- */
+        /* Animation Styles for Cute Effects   */
+        /* ----------------------------------- */
+        
+        /* 1. Pop-up effect on hover (replacing default scale) */
+        .tech-pop:hover .devicon-plain {
+            /* Animation applied only on hover */
+            animation: pop 0.5s ease-in-out;
+        }
+
+        @keyframes pop {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.3) translateY(-5px); }
+            100% { transform: scale(1.1); } /* Ends at a slightly scaled state */
+        }
+
+        /* 2. Gentle floating for a "live" feel (applied to select icons) */
+        .tech-float .devicon-plain {
+            animation: float 4s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-5px); }
+            100% { transform: translateY(0px); }
+        }
+    </style>
 </head>
 
-<body class="bg-white text-gray-900 font-sans min-h-screen transition-colors duration-500 
-             dark:bg-gray-900 dark:text-gray-200">
+<body class="bg-gray-900 text-gray-200 font-sans min-h-screen">
 
-    <nav class="navbar bg-white shadow-lg sticky top-0 z-50 p-4 flex justify-between items-center px-6 md:px-12 border-b border-gray-300 
-                dark:bg-gray-800 dark:border-gray-700">
-        <p class="text-xl font-bold text-black dark:text-teal-400">Ndima's Portfolio</p>
-        
-        <div class="flex items-center space-x-6">
-            <ul class="flex space-x-6">
-                <li><a href="#" class="text-gray-700 hover:text-black transition duration-300 dark:text-gray-200 dark:hover:text-teal-400">Home</a></li>
-                <li><a href="#about-me" class="text-gray-700 hover:text-black transition duration-300 dark:text-gray-200 dark:hover:text-teal-400">About Me</a></li>
-                <li><a href="#certificates" class="text-gray-700 hover:text-black transition duration-300 dark:text-gray-200 dark:hover:text-teal-400">Certificates</a></li>
-                <li><a href="#projects" class="text-gray-700 hover:text-black transition duration-300 dark:text-gray-200 dark:hover:text-teal-400">Project</a></li>
-                <li><a href="#contacts" class="text-gray-700 hover:text-black transition duration-300 dark:text-gray-200 dark:hover:text-teal-400">Contacts</a></li>
-            </ul>
-
-            <button id="theme-toggle" class="p-2 rounded-full text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700 transition duration-300">
-                <i id="theme-icon" class="fa-solid fa-moon text-xl"></i>
-            </button>
-        </div>
+    <nav class="navbar bg-gray-800 shadow-xl sticky top-0 z-50 p-4 flex justify-between items-center px-6 md:px-12">
+        <p class="text-xl font-bold text-teal-400">Ndima's Portfolio</p>
+        <ul class="flex space-x-6">
+            <li><a href="#" class="hover:text-teal-400 transition duration-300">Home</a></li>
+            <li><a href="#about-me" class="hover:text-teal-400 transition duration-300">About Me</a></li>
+            <li><a href="#certificates" class="hover:text-teal-400 transition duration-300">Certificates</a></li>
+            <li><a href="#projects" class="hover:text-teal-400 transition duration-300">Project</a></li>
+            <li><a href="#contacts" class="hover:text-teal-400 transition duration-300">Contacts</a></li>
+        </ul>
     </nav>
 
     <main class="container mx-auto p-4 md:p-10">
@@ -66,312 +71,310 @@
         <div class="starting flex flex-col md:flex-row items-center justify-between py-16 md:py-24">
             <div class="intro md:w-1/2 mb-10 md:mb-0">
                 <h1 class="text-4xl sm:text-5xl lg:text-7xl font-extrabold leading-tight">
-                    <span class="text-gray-700 dark:text-gray-400">Hello, I am </span>
-                    <span class="text-black dark:text-white dark:bg-clip-text dark:text-transparent dark:bg-gradient-to-r dark:from-teal-400 dark:to-cyan-500"> 
+                    <span class="text-gray-400">Hello, I am </span>
+                    <span class="text-white bg-clip-text text-transparent bg-gradient-to-r from-teal-400 to-cyan-500"> 
                         Ndima Karabo Mhangwani
                     </span>
                 </h1>
-                <p class="text-lg text-gray-600 dark:text-gray-400 mt-4 leading-relaxed">
+                <p class="text-lg text-gray-400 mt-4 leading-relaxed">
                     A software developer and software engineering learner based in South Africa. <br> Currently working on improving my skills.
                 </p>
-                <a href="#" download="Ndima_Mhangwani_Resume.pdf" class="inline-block mt-8 px-6 py-3 bg-gray-900 text-white font-semibold rounded-lg shadow-lg hover:bg-black transition duration-300 transform hover:scale-105 
-                                      dark:bg-teal-500 dark:text-gray-900 dark:hover:bg-teal-400" id="hire">
+                <a href="#" download="Ndima_Mhangwani_Resume.pdf" class="inline-block mt-8 px-6 py-3 bg-teal-500 text-gray-900 font-semibold rounded-lg shadow-lg hover:bg-teal-400 transition duration-300 transform animate-bounce">
                     Resume
                 </a>
             </div>
             <div class="picture md:w-1/3">
-                <img src="images/profile.jpg" alt="Ndima Mhangwani professional profile picture" class="rounded-full w-64 h-64 object-cover mx-auto shadow-2xl border-4 border-black dark:border-teal-500">
+                <img src="images/profile.jpg" alt="Ndima Mhangwani professional profile picture" class="rounded-full w-64 h-64 object-cover mx-auto shadow-2xl border-4 border-teal-500">
             </div>
         </div>
 
         <div class="card-container text-center py-16">
-            <p class="text-black dark:text-teal-400 text-sm font-semibold uppercase tracking-widest mb-2">My Focus</p>
-            <h2 class="text-3xl font-bold mb-10 text-gray-800 dark:text-white">WHAT I DO</h2>
+            <p class="text-teal-400 text-sm font-semibold uppercase tracking-widest mb-2">My Focus</p>
+            <h2 class="text-3xl font-bold mb-10 text-white">WHAT I DO</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="card bg-white p-6 rounded-xl shadow-lg border border-gray-200 transition duration-300 hover:shadow-gray-300/50 hover:shadow-2xl 
-                            dark:bg-gray-800 dark:border-gray-700 dark:hover:shadow-teal-500/30">
-                    <h3 class="text-xl font-semibold text-black dark:text-teal-300">Software Testing</h3>
+                <div class="card bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700 transition duration-300 hover:shadow-teal-500/30 hover:shadow-2xl">
+                    <h3 class="text-xl font-semibold text-teal-300">Software Testing</h3>
                 </div>
-                <div class="card bg-white p-6 rounded-xl shadow-lg border border-gray-200 transition duration-300 hover:shadow-gray-300/50 hover:shadow-2xl 
-                            dark:bg-gray-800 dark:border-gray-700 dark:hover:shadow-teal-500/30">
-                    <h3 class="text-xl font-semibold text-black dark:text-teal-300">Frontend Developer</h3>
+                <div class="card bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700 transition duration-300 hover:shadow-teal-500/30 hover:shadow-2xl">
+                    <h3 class="text-xl font-semibold text-teal-300">Frontend Developer</h3>
                 </div>
-                <div class="card bg-white p-6 rounded-xl shadow-lg border border-gray-200 transition duration-300 hover:shadow-gray-300/50 hover:shadow-2xl 
-                            dark:bg-gray-800 dark:border-gray-700 dark:hover:shadow-teal-500/30">
-                    <h3 class="text-xl font-semibold text-black dark:text-teal-300">Backend Developer</h3>
+                <div class="card bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700 transition duration-300 hover:shadow-teal-500/30 hover:shadow-2xl">
+                    <h3 class="text-xl font-semibold text-teal-300">Backend Developer</h3>
                 </div>
-                <div class="card bg-white p-6 rounded-xl shadow-lg border border-gray-200 transition duration-300 hover:shadow-gray-300/50 hover:shadow-2xl 
-                            dark:bg-gray-800 dark:border-gray-700 dark:hover:shadow-teal-500/30">
-                    <h3 class="text-xl font-semibold text-black dark:text-teal-300">Fullstack Developer</h3>
+                <div class="card bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700 transition duration-300 hover:shadow-teal-500/30 hover:shadow-2xl">
+                    <h3 class="text-xl font-semibold text-teal-300">Fullstack Developer</h3>
                 </div>
             </div>
         </div>
 
-        <hr class="border-gray-300 dark:border-gray-700 my-10">
+        <hr class="border-gray-700 my-10">
         
         <div class="about-me-section py-16" id="about-me">
-            <h2 class="text-3xl font-bold mb-4 text-center text-gray-800 dark:text-white">About Me, Education, and Experience</h2>
+            <h2 class="text-3xl font-bold mb-4 text-center text-white">About Me, Education, and Experience</h2>
             
-            <p class="summary text-center max-w-3xl mx-auto text-gray-600 mb-12 p-4 bg-white rounded-lg shadow-md 
-                        dark:text-gray-400 dark:bg-gray-800 dark:shadow-inner">
-                 I am a Full-Stack Developer who is best at the back-end. I build the server side, making sure the system is strong and fast. 
-                 My primary focus is on performance, scalability, and robust architecture, utilizing databases and APIs to ensure secure and efficient data management. I can deliver reliable, complete software from start to finish. 
+            <p class="summary text-center max-w-3xl mx-auto text-gray-400 mb-12 p-4 bg-gray-800 rounded-lg shadow-inner">
+                I am a Full-Stack Developer who is best at the back-end. I build the server side, making sure the system is strong and fast. 
+                My primary focus is on performance, scalability, and robust architecture, utilizing databases and APIs to ensure secure and efficient data management. I can deliver reliable, complete software from start to finish. 
             </p>
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                <div class="experience-card bg-white p-6 rounded-xl shadow-xl border border-gray-200 dark:bg-gray-800 dark:border-gray-700">
-                    <h3 class="text-2xl font-semibold text-black dark:text-teal-400 mb-4 flex items-center"><i class="fa-solid fa-briefcase mr-3 text-gray-700"></i> Work Experience</h3>
+                <div class="experience-card bg-gray-800 p-6 rounded-xl shadow-xl border border-gray-700">
+                    <h3 class="text-2xl font-semibold text-teal-400 mb-4 flex items-center"><i class="fa-solid fa-briefcase mr-3"></i> Work Experience</h3>
                     <ul class="space-y-4">
-                        <li class="border-l-4 border-black dark:border-teal-500 pl-4">
-                            <h4 class="text-xl font-medium text-gray-900 dark:text-white">FullStack Developer Apprentice</h4>
-                            <p class="text-gray-700 dark:text-gray-400 font-semibold mt-1">mlab Southern Africa | July 2025 – March 2026</p>
-                            <p class="text-sm text-gray-600 dark:text-gray-500 mt-1">Gaining hands-on experience in software development and contributing to real-world projects.</p>
+                        <li class="border-l-4 border-teal-500 pl-4">
+                            <h4 class="text-xl font-medium text-white">FullStack Developer Apprentice</h4>
+                            <p class="text-gray-400 font-semibold mt-1">mlab Southern Africa | July 2025 – March 2026</p>
+                            <p class="text-sm text-gray-500 mt-1">Gaining hands-on experience in software development and contributing to real-world projects.</p>
                         </li>
                     </ul>
                 </div>
 
-                <div class="education-card bg-white p-6 rounded-xl shadow-xl border border-gray-200 dark:bg-gray-800 dark:border-gray-700">
-                    <h3 class="text-2xl font-semibold text-black dark:text-teal-400 mb-4 flex items-center"><i class="fa-solid fa-graduation-cap mr-3 text-gray-700"></i> Education</h3>
+                <div class="education-card bg-gray-800 p-6 rounded-xl shadow-xl border border-gray-700">
+                    <h3 class="text-2xl font-semibold text-teal-400 mb-4 flex items-center"><i class="fa-solid fa-graduation-cap mr-3"></i> Education</h3>
                     <ul class="space-y-4">
-                        <li class="border-l-4 border-black dark:border-teal-500 pl-4">
-                            <h4 class="text-xl font-medium text-gray-900 dark:text-white">National Diploma in Computer Science</h4>
-                            <p class="text-gray-700 dark:text-gray-400 font-semibold mt-1">Tshwane University of Technology (TUT) | 2022 – 2025 </p>
-                            <p class="text-sm text-gray-600 dark:text-gray-500 mt-1">Currently completing a qualification in Computer Science</p>
+                        <li class="border-l-4 border-teal-500 pl-4">
+                            <h4 class="text-xl font-medium text-white">National Diploma in Computer Science</h4>
+                            <p class="text-gray-400 font-semibold mt-1">Tshwane University of Technology (TUT) | 2022 – 2025 </p>
+                            <p class="text-sm text-gray-500 mt-1">Currently completing a qualification in Computer Science</p>
                         </li>
-                        <li class="border-l-4 border-black dark:border-teal-500 pl-4">
-                            <h4 class="text-xl font-medium text-gray-900 dark:text-white">Matric Certificate</h4>
-                            <p class="text-gray-700 dark:text-gray-400 font-semibold mt-1">Gawula High School | Passed 2021</p>
+                        <li class="border-l-4 border-teal-500 pl-4">
+                            <h4 class="text-xl font-medium text-white">Matric Certificate</h4>
+                            <p class="text-gray-400 font-semibold mt-1">Gawula High School | Passed 2021</p>
                         </li>
                     </ul>
                 </div>
             </div>
         </div>
 
-        <hr class="border-gray-300 dark:border-gray-700 my-10">
-        <hr class="border-gray-300 dark:border-gray-700 my-10">
+        <hr class="border-gray-700 my-10">
+<hr class="border-gray-700 my-10">
 
-        <div class="projects-section py-16" id="projects">
-            <h2 class="text-3xl font-bold mb-4 text-center text-gray-800 dark:text-white">Featured Projects</h2>
-            <p class="text-center max-w-3xl mx-auto text-gray-600 dark:text-gray-400 mb-12">
-                A selection of my recent work showcasing my abilities in full-stack development, from robust backend systems to responsive user interfaces.
+<div class="projects-section py-16" id="projects">
+    <h2 class="text-3xl font-bold mb-4 text-center text-white">Featured Projects</h2>
+    <p class="text-center max-w-3xl mx-auto text-gray-400 mb-12">
+        A selection of my recent work showcasing my abilities in full-stack development, from robust backend systems to responsive user interfaces.
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="project-card bg-gray-800 p-6 rounded-xl shadow-xl border border-gray-700 flex flex-col transition duration-300 transform hover:-translate-y-1 hover:shadow-teal-500/50 hover:border-teal-500">
+            <h3 class="text-2xl font-semibold text-teal-400 mb-3">Library API</h3>
+            <p class="text-gray-400 mb-4 flex-grow">
+                A RESTful API built with TypeScript and Express.js that manages a community library’s Authors and Books.
+                This API supports CRUD operations, validation, error handling, and logging, enabling librarians to efficiently manage book and author records.
             </p>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="project-card bg-white p-6 rounded-xl shadow-xl border border-gray-200 flex flex-col transition duration-300 hover:shadow-gray-300/50 hover:border-black dark:bg-gray-800 dark:border-gray-700 dark:hover:shadow-teal-500/50 dark:hover:border-teal-500">
-                    <h3 class="text-2xl font-semibold text-black dark:text-teal-400 mb-3">Library API</h3>
-                    <p class="text-gray-700 dark:text-gray-400 mb-4 flex-grow">
-                        A RESTful API built with TypeScript and Express.js that manages a community library’s Authors and Books.
-                        This API supports CRUD operations, validation, error handling, and logging, enabling librarians to efficiently manage book and author records.
-                    </p>
-                    <div class="tech-stack flex flex-wrap gap-2 mb-4">
-                        <span class="px-3 py-1 bg-gray-200 text-gray-800 text-xs font-medium rounded-full dark:bg-teal-900/50 dark:text-teal-300">Node.js</span>
-                        <span class="px-3 py-1 bg-gray-200 text-gray-800 text-xs font-medium rounded-full dark:bg-teal-900/50 dark:text-teal-300">PostegreSQL</span>
-                        <span class="px-3 py-1 bg-gray-200 text-gray-800 text-xs font-medium rounded-full dark:bg-teal-900/50 dark:text-teal-300">TypeScript</span>
-                    </div>
-                    <div class="links mt-auto flex space-x-4">
-                        <a href="https://github.com/Ndima-karabo17/LibraryAPI.git" target="_blank" class="text-gray-700 hover:text-black transition duration-300 dark:text-gray-300 dark:hover:text-teal-400 flex items-center">
-                            <i class="fab fa-github mr-2"></i> GitHub Repo
-                        </a>
-                    </div>
-                </div>
-
-                <div class="project-card bg-white p-6 rounded-xl shadow-xl border border-gray-200 flex flex-col transition duration-300 hover:shadow-gray-300/50 hover:border-black dark:bg-gray-800 dark:border-gray-700 dark:hover:shadow-teal-500/50 dark:hover:border-teal-500">
-                    <h3 class="text-2xl font-semibold text-black dark:text-teal-400 mb-3">UI Challange</h3>
-                    <p class="text-gray-700 dark:text-gray-400 mb-4 flex-grow">
-                        This is a Frontend Mentor challenge focused on replicating a complex UI design, 
-                        specifically implementing a responsive two-column hero section with interactive 
-                        dropdown navigation menus that appear on hover
-                    </p>
-                    <div class="tech-stack flex flex-wrap gap-2 mb-4">
-                        <span class="px-3 py-1 bg-gray-200 text-gray-800 text-xs font-medium rounded-full dark:bg-teal-900/50 dark:text-teal-300">HTML</span>
-                        <span class="px-3 py-1 bg-gray-200 text-gray-800 text-xs font-medium rounded-full dark:bg-teal-900/50 dark:text-teal-300">CSS</span>
-                        <span class="px-3 py-1 bg-gray-200 text-gray-800 text-xs font-medium rounded-full dark:bg-teal-900/50 dark:text-teal-300">JavaScript</span>
-                    </div>
-                    <div class="links mt-auto flex space-x-4">
-                        <a href="https://ui-challange-liard.vercel.app/" target="_blank" class="text-gray-700 hover:text-black transition duration-300 dark:text-gray-300 dark:hover:text-teal-400 flex items-center">
-                            <i class="fa-solid fa-link mr-2"></i> Live Demo
-                        </a>
-                        <a href="https://github.com/Ndima-karabo17/UI-challange.git" target="_blank" class="text-gray-700 hover:text-black transition duration-300 dark:text-gray-300 dark:hover:text-teal-400 flex items-center">
-                            <i class="fab fa-github mr-2"></i> GitHub Repo
-                        </a>
-                    </div>
-                </div>
+            <div class="tech-stack flex flex-wrap gap-2 mb-4">
+                <span class="px-3 py-1 bg-teal-900/50 text-teal-300 text-xs font-medium rounded-full">Node.js</span>
+                <span class="px-3 py-1 bg-teal-900/50 text-teal-300 text-xs font-medium rounded-full">PostegreSQL</span>
+                <span class="px-3 py-1 bg-teal-900/50 text-teal-300 text-xs font-medium rounded-full">TypeScript</span>
+            </div>
+            <div class="links mt-auto flex space-x-4">
+                
+                <a href="https://github.com/Ndima-karabo17/LibraryAPI.git" target="_blank" class="text-gray-300 hover:text-teal-400 transition duration-300 flex items-center">
+                    <i class="fab fa-github mr-2"></i> GitHub Repo
+                </a>
             </div>
         </div>
 
-        <hr class="border-gray-300 dark:border-gray-700 my-10">
+        <div class="project-card bg-gray-800 p-6 rounded-xl shadow-xl border border-gray-700 flex flex-col transition duration-300 transform hover:-translate-y-1 hover:shadow-teal-500/50 hover:border-teal-500">
+            <h3 class="text-2xl font-semibold text-teal-400 mb-3">UI Challange</h3>
+            <p class="text-gray-400 mb-4 flex-grow">
+                This is a Frontend Mentor challenge focused on replicating a complex UI design, 
+                specifically implementing a responsive two-column hero section with interactive 
+                dropdown navigation menus that appear on hover
+            </p>
+            <div class="tech-stack flex flex-wrap gap-2 mb-4">
+                <span class="px-3 py-1 bg-teal-900/50 text-teal-300 text-xs font-medium rounded-full">HTML</span>
+                <span class="px-3 py-1 bg-teal-900/50 text-teal-300 text-xs font-medium rounded-full">CSS</span>
+                <span class="px-3 py-1 bg-teal-900/50 text-teal-300 text-xs font-medium rounded-full">JavaScript</span>
+                
+            </div>
+            <div class="links mt-auto flex space-x-4">
+                
+                <a href="https://ui-challange-liard.vercel.app/" target="_blank" class="text-gray-300 hover:text-teal-400 transition duration-300 flex items-center">
+                    <i class="fa-solid fa-link mr-2"></i> Live Demo
+                </a>
+                <a href="https://github.com/Ndima-karabo17/UI-challange.git" target="_blank" class="text-gray-300 hover:text-teal-400 transition duration-300 flex items-center">
+                    <i class="fab fa-github mr-2"></i> GitHub Repo
+                </a>
+            </div>
+        </div>
+        
+        </div>
+</div>
+
+<hr class="border-gray-700 my-10">
         <div class="tools text-center py-16">
-            <h2 class="text-4xl font-bold mb-2 text-gray-800 dark:text-white">Skills & Technology</h2>
-            <p class="text-gray-600 dark:text-gray-400 mb-10">The tools and technologies I use to bring ideas to life</p>
+            <h2 class="text-4xl font-bold mb-2 text-white">Skills & Technology</h2>
+            <p class="text-gray-400 mb-10">The tools and technologies I use to bring ideas to life</p>
         </div>
 
         <div class="technology grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 pb-20">
-            <div class="tech bg-white p-6 rounded-xl shadow-lg border border-gray-200 text-center transition duration-300 hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700/50">
-                <i class="devicon-react-plain text-gray-900 dark:text-white text-5xl"></i>
-                <h3 class="text-lg font-semibold mt-3 text-gray-900 dark:text-white">React</h3>
-                <p class="text-xs text-gray-700 dark:text-gray-400 mt-1">Component-based UI development</p>
+            
+            <div class="tech-pop tech-float bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700 text-center transition duration-300 hover:bg-gray-700/50">
+                <i class="devicon-react-plain colored text-5xl"></i>
+                <h3 class="text-lg font-semibold mt-3 text-white">React</h3>
+                <p class="text-xs text-gray-400 mt-1">Component-based UI development</p>
             </div>
-            <div class="tech bg-white p-6 rounded-xl shadow-lg border border-gray-200 text-center transition duration-300 hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700/50">
-                <i class="devicon-redux-plain text-gray-900 dark:text-white text-5xl"></i>
-                <h3 class="text-lg font-semibold mt-3 text-gray-900 dark:text-white">Redux</h3>
-                <p class="text-xs text-gray-700 dark:text-gray-400 mt-1">Predictable state management</p>
+            <div class="tech-pop bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700 text-center transition duration-300 hover:bg-gray-700/50">
+                <i class="devicon-redux-plain colored text-5xl"></i>
+                <h3 class="text-lg font-semibold mt-3 text-white">Redux</h3>
+                <p class="text-xs text-gray-400 mt-1">Predictable state management</p>
             </div>
-            <div class="tech bg-white p-6 rounded-xl shadow-lg border border-gray-200 text-center transition duration-300 hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700/50">
-                <i class="devicon-tailwindcss-plain text-gray-900 dark:text-white text-5xl"></i>
-                <h3 class="text-lg font-semibold mt-3 text-gray-900 dark:text-white">Tailwind CSS</h3>
-                <p class="text-xs text-gray-700 dark:text-gray-400 mt-1">Utility-first styling for rapid development</p>
+            <div class="tech-pop bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700 text-center transition duration-300 hover:bg-gray-700/50">
+                <i class="devicon-tailwindcss-plain colored text-5xl"></i>
+                <h3 class="text-lg font-semibold mt-3 text-white">Tailwind CSS</h3>
+                <p class="text-xs text-gray-400 mt-1">Utility-first styling for rapid development</p>
             </div>
-            <div class="tech bg-white p-6 rounded-xl shadow-lg border border-gray-200 text-center transition duration-300 hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700/50">
-                <i class="devicon-html5-plain text-gray-900 dark:text-white text-5xl"></i>
-                <h3 class="text-lg font-semibold mt-3 text-gray-900 dark:text-white">HTML</h3>
-                <p class="text-xs text-gray-700 dark:text-gray-400 mt-1">Sematic markup and modern web standard</p>
+            <div class="tech-pop bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700 text-center transition duration-300 hover:bg-gray-700/50">
+                <i class="devicon-html5-plain colored text-5xl"></i>
+                <h3 class="text-lg font-semibold mt-3 text-white">HTML</h3>
+                <p class="text-xs text-gray-400 mt-1">Sematic markup and modern web standard</p>
             </div>
-            <div class="tech bg-white p-6 rounded-xl shadow-lg border border-gray-200 text-center transition duration-300 hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700/50">
-                <i class="devicon-css3-plain text-gray-900 dark:text-white text-5xl"></i>
-                <h3 class="text-lg font-semibold mt-3 text-gray-900 dark:text-white">CSS</h3>
-                <p class="text-xs text-gray-700 dark:text-gray-400 mt-1">Responsive design and modern layouts</p>
+            <div class="tech-pop bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700 text-center transition duration-300 hover:bg-gray-700/50">
+                <i class="devicon-css3-plain colored text-5xl"></i>
+                <h3 class="text-lg font-semibold mt-3 text-white">CSS</h3>
+                <p class="text-xs text-gray-400 mt-1">Responsive design and modern layouts</p>
             </div>
-            <div class="tech bg-white p-6 rounded-xl shadow-lg border border-gray-200 text-center transition duration-300 hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700/50">
-                <i class="devicon-javascript-plain text-gray-900 dark:text-white text-5xl"></i>
-                <h3 class="text-lg font-semibold mt-3 text-gray-900 dark:text-white">JavaScript</h3>
-                <p class="text-xs text-gray-700 dark:text-gray-400 mt-1">Dynamic layouts and client-side logic</p>
+            <div class="tech-pop tech-float bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700 text-center transition duration-300 hover:bg-gray-700/50">
+                <i class="devicon-javascript-plain colored text-5xl"></i>
+                <h3 class="text-lg font-semibold mt-3 text-white">JavaScript</h3>
+                <p class="text-xs text-gray-400 mt-1">Dynamic layouts and client-side logic</p>
             </div>
 
-            <div class="tech bg-white p-6 rounded-xl shadow-lg border border-gray-200 text-center transition duration-300 hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700/50">
-                <i class="devicon-python-plain text-gray-900 dark:text-white text-5xl"></i>
-                <h3 class="text-lg font-semibold mt-3 text-gray-900 dark:text-white">Python</h3>
-                <p class="text-xs text-gray-700 dark:text-gray-400 mt-1">Backend logic and data processing</p>
+            <div class="tech-pop bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700 text-center transition duration-300 hover:bg-gray-700/50">
+                <i class="devicon-python-plain colored text-5xl"></i>
+                <h3 class="text-lg font-semibold mt-3 text-white">Python</h3>
+                <p class="text-xs text-gray-400 mt-1">Backend logic and data processing</p>
             </div>
             
-            <div class="tech bg-white p-6 rounded-xl shadow-lg border border-gray-200 text-center transition duration-300 hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700/50">
-                <i class="devicon-nodejs-plain text-gray-900 dark:text-white text-5xl"></i>
-                <h3 class="text-lg font-semibold mt-3 text-gray-900 dark:text-white">Node.js</h3>
-                <p class="text-xs text-gray-700 dark:text-gray-400 mt-1">Server-side JavaScript</p>
+            <div class="tech-pop bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700 text-center transition duration-300 hover:bg-gray-700/50">
+                <i class="devicon-nodejs-plain colored text-5xl"></i>
+                <h3 class="text-lg font-semibold mt-3 text-white">Node.js</h3>
+                <p class="text-xs text-gray-400 mt-1">Server-side JavaScript</p>
             </div>
-            <div class="tech bg-white p-6 rounded-xl shadow-lg border border-gray-200 text-center transition duration-300 hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700/50">
-                <i class="devicon-sqldeveloper-plain text-gray-900 dark:text-white text-5xl"></i>
-                <h3 class="text-lg font-semibold mt-3 text-gray-900 dark:text-white">SQL</h3>
-                <p class="text-xs text-gray-700 dark:text-gray-400 mt-1">Create, modify and extract data</p>
+            <div class="tech-pop bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700 text-center transition duration-300 hover:bg-gray-700/50">
+                <i class="devicon-sqldeveloper-plain colored text-5xl"></i>
+                <h3 class="text-lg font-semibold mt-3 text-white">SQL</h3>
+                <p class="text-xs text-gray-400 mt-1">Create, modify and extract data</p>
             </div>
-            <div class="tech bg-white p-6 rounded-xl shadow-lg border border-gray-200 text-center transition duration-300 hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700/50">
-                <i class="devicon-mysql-plain text-gray-900 dark:text-white text-5xl"></i>
-                <h3 class="text-lg font-semibold mt-3 text-gray-900 dark:text-white">SQLite3</h3>
-                <p class="text-xs text-gray-700 dark:text-gray-400 mt-1">Supports various data operations</p>
+            <div class="tech-pop bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700 text-center transition duration-300 hover:bg-gray-700/50">
+                <i class="devicon-mysql-plain colored text-5xl"></i>
+                <h3 class="text-lg font-semibold mt-3 text-white">SQLite3</h3>
+                <p class="text-xs text-gray-400 mt-1">Supports various data operations</p>
             </div>
             
-            <div class="tech bg-white p-6 rounded-xl shadow-lg border border-gray-200 text-center transition duration-300 hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700/50">
-                <i class="devicon-github-plain text-gray-900 dark:text-white text-5xl"></i>
-                <h3 class="text-lg font-semibold mt-3 text-gray-900 dark:text-white">GitHub</h3>
-                <p class="text-xs text-gray-700 dark:text-gray-400 mt-1">Version controller and collaboration</p>
+            <div class="tech-pop bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700 text-center transition duration-300 hover:bg-gray-700/50">
+                <i class="devicon-github-plain text-white text-5xl"></i>
+                <h3 class="text-lg font-semibold mt-3 text-white">GitHub</h3>
+                <p class="text-xs text-gray-400 mt-1">Version controller and collaboration</p>
             </div>
 
         </div>
 
-        <hr class="border-gray-300 dark:border-gray-700 my-10">
         
-        <div id="contacts" class="contact-section py-16 bg-gray-50 rounded-xl shadow-2xl p-8 text-center border border-gray-300 
-                    dark:bg-gray-800/50 dark:border-gray-700">
-            <h2 class="text-4xl font-bold mb-4 text-black dark:text-teal-400">Get in Touch</h2>
-            <p class="text-gray-600 dark:text-gray-400 mb-10 max-w-xl mx-auto">
-                I'm currently seeking new opportunities and challenges. Feel free to connect or send me a message directly.
-            </p>
+        <hr class="border-gray-700 my-10">
+        
+        <div id="contacts" class="contact-section py-16 bg-gray-800/50 rounded-xl shadow-2xl p-8 text-center">
+    <h2 class="text-4xl font-bold mb-4 text-teal-400">Get in Touch</h2>
+    <p class="text-gray-400 mb-10 max-w-xl mx-auto">
+        I'm currently seeking new opportunities and challenges. Feel free to connect or send me a message directly.
+    </p>
 
-            <form action="#about-me" method="POST" class="max-w-xl mx-auto text-left space-y-6">
-                
-                <div>
-                    <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Full Name: </label>
-                    <input type="text" id="name" name="name" required
-                           class="w-full px-4 py-2 border border-gray-400 rounded-lg bg-white text-gray-900 focus:ring-black focus:border-black transition duration-300
-                                  dark:bg-gray-900 dark:text-gray-200 dark:border-gray-700 dark:focus:ring-teal-500 dark:focus:border-teal-500"
-                           placeholder="Ndima Mhangwani">
-                </div>
-
-                <div>
-                    <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Email Address: </label>
-                    <input type="email" id="email" name="email" required
-                           class="w-full px-4 py-2 border border-gray-400 rounded-lg bg-white text-gray-900 focus:ring-black focus:border-black transition duration-300
-                                  dark:bg-gray-900 dark:text-gray-200 dark:border-gray-700 dark:focus:ring-teal-500 dark:focus:border-teal-500"
-                           placeholder="yourEmail@domain">
-                </div>
-
-                <div>
-                    <label for="purpose" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Message: </label>
-                    <textarea id="purpose" name="purpose" rows="4" required
-                              class="w-full px-4 py-2 border border-gray-400 rounded-lg bg-white text-gray-900 focus:ring-black focus:border-black transition duration-300
-                                     dark:bg-gray-900 dark:text-gray-200 dark:border-gray-700 dark:focus:ring-teal-500 dark:focus:border-teal-500"
-                              placeholder="I'm reaching out about a job opportunity..."></textarea>
-                </div>
-
-                <div class="text-center pt-2">
-                    <button type="submit"
-                            class="inline-block px-8 py-3 bg-gray-900 text-white font-semibold rounded-lg shadow-lg hover:bg-black transition duration-300 transform hover:scale-105
-                                   dark:bg-teal-500 dark:text-gray-900 dark:hover:bg-teal-400">
-                        Send Message
-                    </button>
-                </div>
-            </form>
-            <div class="flex flex-col sm:flex-row justify-center space-y-6 sm:space-y-0 sm:space-x-12 mt-10 border-t border-gray-300 dark:border-gray-700 pt-8">
-                <a href="http://www.linkedin.com/in/ndima-mhangwani-4761b332a" target="_blank" class="flex items-center justify-center text-gray-700 hover:text-black transition duration-300 dark:text-gray-400 dark:hover:text-teal-400">
-                    <i class="fab fa-linkedin text-2xl mr-2"></i>
-                    <span class="font-medium">LinkedIn</span>
-                </a>
-
-                <a href="https://github.com/Ndima-karabo17" target="_blank" class="flex items-center justify-center text-gray-700 hover:text-black transition duration-300 dark:text-gray-400 dark:hover:text-teal-400">
-                    <i class="fab fa-github text-2xl mr-2"></i>
-                    <span class="font-medium">GitHub</span>
-                </a>
-            </div>
+    <form action="#about-me" method="POST" class="max-w-xl mx-auto text-left space-y-6">
+        
+        <div>
+            <label for="name" class="block text-sm font-medium text-gray-300 mb-1">Full Name: </label>
+            <input type="text" id="name" name="name" required
+                    class="w-full px-4 py-2 border border-gray-700 rounded-lg bg-gray-900 text-gray-200 focus:ring-teal-500 focus:border-teal-500 transition duration-300"
+                    placeholder="Ndima Mhangwani">
         </div>
+
+        <div>
+            <label for="email" class="block text-sm font-medium text-gray-300 mb-1">Email Address: </label>
+            <input type="email" id="email" name="email" required
+                    class="w-full px-4 py-2 border border-gray-700 rounded-lg bg-gray-900 text-gray-200 focus:ring-teal-500 focus:border-teal-500 transition duration-300"
+                    placeholder="yourEmail@domain">
+        </div>
+
+        <div>
+            <label for="purpose" class="block text-sm font-medium text-gray-300 mb-1">Message: </label>
+            <textarea id="purpose" name="purpose" rows="4" required
+                        class="w-full px-4 py-2 border border-gray-700 rounded-lg bg-gray-900 text-gray-200 focus:ring-teal-500 focus:border-teal-500 transition duration-300"
+                        placeholder="I'm reaching out about a job opportunity..."></textarea>
+        </div>
+
+        <div class="text-center pt-2">
+            <button type="submit"
+                    class="inline-block px-8 py-3 bg-teal-500 text-gray-900 font-semibold rounded-lg shadow-lg hover:bg-teal-400 transition duration-300 transform hover:scale-105">
+                Send Message
+            </button>
+        </div>
+    </form>
+    <div class="flex flex-col sm:flex-row justify-center space-y-6 sm:space-y-0 sm:space-x-12 mt-10 border-t border-gray-700 pt-8">
+        <a href="http://www.linkedin.com/in/ndima-mhangwani-4761b332a" target="_blank" class="flex items-center justify-center text-gray-400 hover:text-teal-400 transition duration-300">
+            <i class="fab fa-linkedin text-2xl mr-2"></i>
+            <span class="font-medium">LinkedIn</span>
+        </a>
+
+        <a href="https://github.com/Ndima-karabo17" target="_blank" class="flex items-center justify-center text-gray-400 hover:text-teal-400 transition duration-300">
+            <i class="fab fa-github text-2xl mr-2"></i>
+            <span class="font-medium">GitHub</span>
+        </a>
+    </div>
+</div>
 
     </main>
 
-    <footer class="bg-white border-t border-gray-300 mt-10 dark:bg-gray-800 dark:border-gray-700">
+    <footer class="bg-gray-800 border-t border-gray-700 mt-10">
         <section class="footerSection container mx-auto p-6 md:p-10">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 pb-6">
                 
                 <div class="about-col">
-                    <p class="text-xl font-bold text-black dark:text-teal-400 mb-3">Ndima Karabo Mhangwani</p>
-                    <p class="text-sm text-gray-700 dark:text-gray-400 leading-relaxed">
+                    <p class="text-xl font-bold text-teal-400 mb-3">Ndima Karabo Mhangwani</p>
+                    <p class="text-sm text-gray-400 leading-relaxed">
                         Full-Stack Developer focused on building robust, scalable, and secure backend systems and clean, responsive interfaces. Based in South Africa.
                     </p>
-                    <a href="mailto:mhangwanikarabo@gmail.com" class="text-gray-700 hover:text-black text-sm mt-3 inline-block dark:text-teal-300 dark:hover:text-teal-400">mhangwanikarabo@gmail.com</a>
+                    <a href="mailto:mhangwanikarabo@gmail.com" class="text-teal-300 hover:text-teal-400 text-sm mt-3 inline-block">mhangwanikarabo@gmail.com</a>
                 </div>
 
                 <div class="links-col">
-                    <h4 class="text-lg font-semibold text-gray-900 dark:text-white mb-3 border-b border-gray-300 dark:border-gray-700 pb-1">Quick Links</h4>
+                    <h4 class="text-lg font-semibold text-white mb-3 border-b border-gray-700 pb-1">Quick Links</h4>
                     <ul class="space-y-2 text-sm">
-                        <li><a href="#" class="text-gray-700 hover:text-black transition duration-200 dark:text-gray-400 dark:hover:text-teal-400">Home</a></li>
-                        <li><a href="#about-me" class="text-gray-700 hover:text-black transition duration-200 dark:text-gray-400 dark:hover:text-teal-400">About Me</a></li>
-                        <li><a href="#projects" class="text-gray-700 hover:text-black transition duration-200 dark:text-gray-400 dark:hover:text-teal-400">Projects</a></li>
-                        <li><a href="#contacts" class="text-gray-700 hover:text-black transition duration-200 dark:text-gray-400 dark:hover:text-teal-400">Contact</a></li>
-                        <li><a href="#" download="Ndima_Mhangwani_Resume.pdf" class="text-gray-700 hover:text-black transition duration-200 dark:text-gray-400 dark:hover:text-teal-400">Download Resume</a></li>
+                        <li><a href="#" class="hover:text-teal-400 transition duration-200">Home</a></li>
+                        <li><a href="#about-me" class="hover:text-teal-400 transition duration-200">About Me</a></li>
+                        <li><a href="#projects" class="hover:text-teal-400 transition duration-200">Projects</a></li>
+                        <li><a href="#contacts" class="hover:text-teal-400 transition duration-200">Contact</a></li>
+                        <li><a href="#" download="Ndima_Mhangwani_Resume.pdf" class="hover:text-teal-400 transition duration-200">Download Resume</a></li>
                     </ul>
                 </div>
 
                 <div class="connect-col">
-                    <h4 class="text-lg font-semibold text-gray-900 dark:text-white mb-3 border-b border-gray-300 dark:border-gray-700 pb-1">Connect</h4>
+                    <h4 class="text-lg font-semibold text-white mb-3 border-b border-gray-700 pb-1">Connect</h4>
                     <div class="flex space-x-4">
-                        <a href="http://www.linkedin.com/in/ndima-mhangwani-4761b332a" target="_blank" class="text-gray-700 hover:text-black transition duration-200 dark:text-gray-400 dark:hover:text-teal-400" title="LinkedIn">
+                        <a href="http://www.linkedin.com/in/ndima-mhangwani-4761b332a" target="_blank" class="text-gray-400 hover:text-teal-400 transition duration-200" title="LinkedIn">
                             <i class="fab fa-linkedin text-2xl"></i>
                         </a>
-                        <a href="https://github.com/Ndima-karabo17" target="_blank" class="text-gray-700 hover:text-black transition duration-200 dark:text-gray-400 dark:hover:text-teal-400" title="GitHub">
+                        <a href="https://github.com/Ndima-karabo17" target="_blank" class="text-gray-400 hover:text-teal-400 transition duration-200" title="GitHub">
                             <i class="fab fa-github text-2xl"></i>
                         </a>
-                        <a href="mailto:mhangwanikarabo@gmail.com" class="text-gray-700 hover:text-black transition duration-200 dark:text-gray-400 dark:hover:text-teal-400" title="Email">
+                        <a href="mailto:mhangwanikarabo@gmail.com" class="text-gray-400 hover:text-teal-400 transition duration-200" title="Email">
                             <i class="fas fa-envelope text-2xl"></i>
                         </a>
                     </div>
                 </div>
             </div>
 
-            <hr class="border-gray-300 dark:border-gray-700 my-6">
+            <hr class="border-gray-700 my-6">
 
-            <div class="copyright text-center text-sm text-gray-600 dark:text-gray-500">
+            <div class="copyright text-center text-sm text-gray-500">
                 &copy; <span id="currentYear">2025</span> Ndima Karabo Mhangwani. All Rights Reserved.
             </div>
         </section>
     </footer>
 
-    <script src="portfolio.js"></script>
+    <script src="portfolio.js">
+       
+    </script>
 </body>
+
 </html>
