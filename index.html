@@ -6,11 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ndima's Portfolio</title>
     
- 
     <script src="https://cdn.tailwindcss.com"></script>
     
     <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
-   
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
     <style>
@@ -21,16 +20,17 @@
         .tech:hover .devicon-plain {
             transform: scale(1.1);
         }
-    </style>
+    </style> 
 </head>
 
-<body class="bg-gray-900 text-gray-200 font-inter min-h-screen">
+<body class="bg-gray-900 text-gray-200 font-sans min-h-screen">
 
     <nav class="navbar bg-gray-800 shadow-xl sticky top-0 z-50 p-4 flex justify-between items-center px-6 md:px-12">
         <p class="text-xl font-bold text-teal-400">Ndima's Portfolio</p>
         <ul class="flex space-x-6">
             <li><a href="#" class="hover:text-teal-400 transition duration-300">Home</a></li>
             <li><a href="#about-me" class="hover:text-teal-400 transition duration-300">About Me</a></li>
+            <li><a href="#certificates" class="hover:text-teal-400 transition duration-300">Certificates</a></li>
             <li><a href="#projects" class="hover:text-teal-400 transition duration-300">Project</a></li>
             <li><a href="#contacts" class="hover:text-teal-400 transition duration-300">Contacts</a></li>
         </ul>
@@ -42,19 +42,19 @@
             <div class="intro md:w-1/2 mb-10 md:mb-0">
                 <h1 class="text-4xl sm:text-5xl lg:text-7xl font-extrabold leading-tight">
                     <span class="text-gray-400">Hello, I am </span>
-                    <span class="text-white bg-clip-text text-transparent bg-gradient-to-r from-teal-400 to-cyan-500">
-                        Ndima Mhangwani
+                    <span class="text-white bg-clip-text text-transparent bg-gradient-to-r from-teal-400 to-cyan-500"> 
+                        Ndima Karabo Mhangwani
                     </span>
                 </h1>
                 <p class="text-lg text-gray-400 mt-4 leading-relaxed">
                     A software developer and software engineering learner based in South Africa. <br> Currently working on improving my skills.
                 </p>
-                <button id="hire" class="mt-8 px-6 py-3 bg-teal-500 text-gray-900 font-semibold rounded-lg shadow-lg hover:bg-teal-400 transition duration-300 transform hover:scale-105">
+                <a href="#" download="Ndima_Mhangwani_Resume.pdf" class="inline-block mt-8 px-6 py-3 bg-teal-500 text-gray-900 font-semibold rounded-lg shadow-lg hover:bg-teal-400 transition duration-300 transform hover:scale-105">
                     Resume
-                </button>
+                </a>
             </div>
             <div class="picture md:w-1/3">
-                <img src="images/profile.jpg" alt="An image of me" class="rounded-full w-64 h-64 object-cover mx-auto shadow-2xl border-4 border-teal-500">
+                <img src="images/profile.jpg" alt="Ndima Mhangwani professional profile picture" class="rounded-full w-64 h-64 object-cover mx-auto shadow-2xl border-4 border-teal-500">
             </div>
         </div>
 
@@ -83,7 +83,8 @@
             <h2 class="text-3xl font-bold mb-4 text-center text-white">About Me, Education, and Experience</h2>
             
             <p class="summary text-center max-w-3xl mx-auto text-gray-400 mb-12 p-4 bg-gray-800 rounded-lg shadow-inner">
-                I am a Software Developer and Engineering Learner dedicated to building robust and engaging web applications. Currently completing my studies at Tshwane University of Technology, I focus on developing my skills in modern frontend frameworks like React and essential backend languages like Python and Java. I am eager to apply my academic knowledge in a professional environment during my time at mlab Southern Africa.
+                 I am a Full-Stack Developer who is best at the back-end. I build the server side, making sure the system is strong and fast. 
+                 My primary focus is on performance, scalability, and robust architecture, utilizing databases and APIs to ensure secure and efficient data management. I can deliver reliable, complete software from start to finish. 
             </p>
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -91,7 +92,7 @@
                     <h3 class="text-2xl font-semibold text-teal-400 mb-4 flex items-center"><i class="fa-solid fa-briefcase mr-3"></i> Work Experience</h3>
                     <ul class="space-y-4">
                         <li class="border-l-4 border-teal-500 pl-4">
-                            <h4 class="text-xl font-medium text-white">Software Engineering Apprentice</h4>
+                            <h4 class="text-xl font-medium text-white">FullStack Developer Apprentice</h4>
                             <p class="text-gray-400 font-semibold mt-1">mlab Southern Africa | July 2025 – March 2026</p>
                             <p class="text-sm text-gray-500 mt-1">Gaining hands-on experience in software development and contributing to real-world projects.</p>
                         </li>
@@ -103,8 +104,8 @@
                     <ul class="space-y-4">
                         <li class="border-l-4 border-teal-500 pl-4">
                             <h4 class="text-xl font-medium text-white">National Diploma in Computer Science</h4>
-                            <p class="text-gray-400 font-semibold mt-1">Tshwane University of Technology (TUT) | 2022 – 2025 (Expected)</p>
-                            <p class="text-sm text-gray-500 mt-1">Currently completing a qualification in a software engineering-related field.</p>
+                            <p class="text-gray-400 font-semibold mt-1">Tshwane University of Technology (TUT) | 2022 – 2025 </p>
+                            <p class="text-sm text-gray-500 mt-1">Currently completing a qualification in Computer Science</p>
                         </li>
                         <li class="border-l-4 border-teal-500 pl-4">
                             <h4 class="text-xl font-medium text-white">Matric Certificate</h4>
@@ -116,7 +117,61 @@
         </div>
 
         <hr class="border-gray-700 my-10">
+<hr class="border-gray-700 my-10">
 
+<div class="projects-section py-16" id="projects">
+    <h2 class="text-3xl font-bold mb-4 text-center text-white">Featured Projects</h2>
+    <p class="text-center max-w-3xl mx-auto text-gray-400 mb-12">
+        A selection of my recent work showcasing my abilities in full-stack development, from robust backend systems to responsive user interfaces.
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="project-card bg-gray-800 p-6 rounded-xl shadow-xl border border-gray-700 flex flex-col transition duration-300 hover:shadow-teal-500/50 hover:border-teal-500">
+            <h3 class="text-2xl font-semibold text-teal-400 mb-3">Online Book Store Platform</h3>
+            <p class="text-gray-400 mb-4 flex-grow">
+                A full-stack application for managing a digital book inventory, allowing users to browse, search, and purchase books. The backend provides secure API endpoints for inventory management and transaction processing.
+            </p>
+            <div class="tech-stack flex flex-wrap gap-2 mb-4">
+                <span class="px-3 py-1 bg-teal-900/50 text-teal-300 text-xs font-medium rounded-full">Node.js</span>
+                <span class="px-3 py-1 bg-teal-900/50 text-teal-300 text-xs font-medium rounded-full">Express</span>
+                <span class="px-3 py-1 bg-teal-900/50 text-teal-300 text-xs font-medium rounded-full">SQLite3</span>
+                <span class="px-3 py-1 bg-teal-900/50 text-teal-300 text-xs font-medium rounded-full">React</span>
+            </div>
+            <div class="links mt-auto flex space-x-4">
+                <a href="#" target="_blank" class="text-gray-300 hover:text-teal-400 transition duration-300 flex items-center">
+                    <i class="fa-solid fa-link mr-2"></i> Live Demo
+                </a>
+                <a href="https://github.com/your-repo-link/book-store" target="_blank" class="text-gray-300 hover:text-teal-400 transition duration-300 flex items-center">
+                    <i class="fab fa-github mr-2"></i> GitHub Repo
+                </a>
+            </div>
+        </div>
+
+        <div class="project-card bg-gray-800 p-6 rounded-xl shadow-xl border border-gray-700 flex flex-col transition duration-300 hover:shadow-teal-500/50 hover:border-teal-500">
+            <h3 class="text-2xl font-semibold text-teal-400 mb-3">Personal Task Manager API</h3>
+            <p class="text-gray-400 mb-4 flex-grow">
+                A robust backend API built with Python for managing personal to-do lists and tasks. Features user authentication, task categorization, and efficient data retrieval.
+            </p>
+            <div class="tech-stack flex flex-wrap gap-2 mb-4">
+                <span class="px-3 py-1 bg-teal-900/50 text-teal-300 text-xs font-medium rounded-full">Python</span>
+                <span class="px-3 py-1 bg-teal-900/50 text-teal-300 text-xs font-medium rounded-full">Flask</span>
+                <span class="px-3 py-1 bg-teal-900/50 text-teal-300 text-xs font-medium rounded-full">MySQL</span>
+                <span class="px-3 py-1 bg-teal-900/50 text-teal-300 text-xs font-medium rounded-full">JWT Auth</span>
+            </div>
+            <div class="links mt-auto flex space-x-4">
+                <a href="#" target="_blank" class="text-gray-300 hover:text-teal-400 transition duration-300 flex items-center">
+                    <i class="fa-solid fa-link mr-2"></i> API Documentation
+                </a>
+                <a href="https://github.com/your-repo-link/task-manager-api" target="_blank" class="text-gray-300 hover:text-teal-400 transition duration-300 flex items-center">
+                    <i class="fab fa-github mr-2"></i> GitHub Repo
+                </a>
+            </div>
+        </div>
+        
+        </div>
+</div>
+
+<hr class="border-gray-700 my-10">
         <div class="tools text-center py-16">
             <h2 class="text-4xl font-bold mb-2 text-white">Skills & Technology</h2>
             <p class="text-gray-400 mb-10">The tools and technologies I use to bring ideas to life</p>
@@ -160,11 +215,7 @@
                 <h3 class="text-lg font-semibold mt-3 text-white">Python</h3>
                 <p class="text-xs text-gray-400 mt-1">Backend logic and data processing</p>
             </div>
-            <div class="tech bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700 text-center transition duration-300 hover:bg-gray-700/50">
-                <i class="devicon-java-plain colored text-5xl"></i>
-                <h3 class="text-lg font-semibold mt-3 text-white">Java</h3>
-                <p class="text-xs text-gray-400 mt-1">Handling business logic</p>
-            </div>
+            
             <div class="tech bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700 text-center transition duration-300 hover:bg-gray-700/50">
                 <i class="devicon-nodejs-plain colored text-5xl"></i>
                 <h3 class="text-lg font-semibold mt-3 text-white">Node.js</h3>
@@ -177,7 +228,7 @@
             </div>
             <div class="tech bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700 text-center transition duration-300 hover:bg-gray-700/50">
                 <i class="devicon-mysql-plain colored text-5xl"></i>
-                <h3 class="text-lg font-semibold mt-3 text-white">MySQL</h3>
+                <h3 class="text-lg font-semibold mt-3 text-white">SQLite3</h3>
                 <p class="text-xs text-gray-400 mt-1">Supports various data operations</p>
             </div>
             
@@ -189,60 +240,9 @@
 
         </div>
 
-        <hr class="border-gray-700 my-10">
-
-        <div id="projects" class="projects-section py-16">
-            <h2 class="text-4xl font-bold mb-10 text-center text-teal-400">My Projects</h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                
-                <div class="bg-gray-800 p-6 rounded-xl shadow-2xl border border-teal-500/50 hover:border-teal-400 transition duration-300">
-                    <h3 class="text-xl font-semibold text-white mb-3">Project Title: Web Converter</h3>
-                    <p class="text-gray-400 text-sm mb-4">A utility web application for unit or currency conversion.</p>
-                    <div class="flex flex-wrap gap-2 text-xs">
-                        <span class="bg-teal-700/50 text-teal-200 px-3 py-1 rounded-full">HTML</span>
-                        <span class="bg-teal-700/50 text-teal-200 px-3 py-1 rounded-full">CSS</span>
-                        <span class="bg-teal-700/50 text-teal-200 px-3 py-1 rounded-full">JavaScript</span>
-                    </div>
-                    <div class="mt-4 flex justify-end space-x-3">
-                        <a href="#" class="text-sm text-teal-400 hover:text-teal-300 font-medium">View Live</a>
-                        <a href="#" class="text-sm text-gray-500 hover:text-gray-400 font-medium">GitHub Repo</a>
-                    </div>
-                </div>
-
-                <div class="bg-gray-800 p-6 rounded-xl shadow-2xl border border-teal-500/50 hover:border-teal-400 transition duration-300">
-                    <h3 class="text-xl font-semibold text-white mb-3">Project Title: E-commerce Backend</h3>
-                    <p class="text-gray-400 text-sm mb-4">A robust backend system handling user authentication and product inventory.</p>
-                    <div class="flex flex-wrap gap-2 text-xs">
-                        <span class="bg-teal-700/50 text-teal-200 px-3 py-1 rounded-full">Python</span>
-                        <span class="bg-teal-700/50 text-teal-200 px-3 py-1 rounded-full">MySQL</span>
-                        <span class="bg-teal-700/50 text-teal-200 px-3 py-1 rounded-full">Node.js</span>
-                    </div>
-                    <div class="mt-4 flex justify-end space-x-3">
-                        <a href="#" class="text-sm text-teal-400 hover:text-teal-300 font-medium">View Live</a>
-                        <a href="#" class="text-sm text-gray-500 hover:text-gray-400 font-medium">GitHub Repo</a>
-                    </div>
-                </div>
-
-                <div class="bg-gray-800 p-6 rounded-xl shadow-2xl border border-teal-500/50 hover:border-teal-400 transition duration-300">
-                    <h3 class="text-xl font-semibold text-white mb-3">Project Title: React Dashboard</h3>
-                    <p class="text-gray-400 text-sm mb-4">A responsive data visualization dashboard built with React and Redux.</p>
-                    <div class="flex flex-wrap gap-2 text-xs">
-                        <span class="bg-teal-700/50 text-teal-200 px-3 py-1 rounded-full">React</span>
-                        <span class="bg-teal-700/50 text-teal-200 px-3 py-1 rounded-full">Redux</span>
-                        <span class="bg-teal-700/50 text-teal-200 px-3 py-1 rounded-full">Tailwind CSS</span>
-                    </div>
-                    <div class="mt-4 flex justify-end space-x-3">
-                        <a href="#" class="text-sm text-teal-400 hover:text-teal-300 font-medium">View Live</a>
-                        <a href="#" class="text-sm text-gray-500 hover:text-gray-400 font-medium">GitHub Repo</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
+       
         <hr class="border-gray-700 my-10">
         
-        <!-- CONTACT SECTION -->
         <div id="contacts" class="contact-section py-16 bg-gray-800/50 rounded-xl shadow-2xl p-8 text-center">
             <h2 class="text-4xl font-bold mb-4 text-teal-400">Get in Touch</h2>
             <p class="text-gray-400 mb-10 max-w-xl mx-auto">
@@ -251,19 +251,16 @@
             
             <div class="flex flex-col sm:flex-row justify-center space-y-6 sm:space-y-0 sm:space-x-12">
                 
-                <!-- LinkedIn -->
                 <a href="http://www.linkedin.com/in/ndima-mhangwani-4761b332a" target="_blank" class="flex items-center justify-center p-4 bg-gray-900 rounded-lg transition duration-300 hover:bg-teal-700/50 hover:text-teal-400 text-white shadow-md">
                     <i class="fab fa-linkedin text-2xl mr-3"></i>
                     <span class="font-medium">Connect on LinkedIn</span>
                 </a>
 
-                <!-- Email -->
                 <a href="mailto:mhangwanikarabo@gmail.com" class="flex items-center justify-center p-4 bg-gray-900 rounded-lg transition duration-300 hover:bg-teal-700/50 hover:text-teal-400 text-white shadow-md">
                     <i class="fas fa-envelope text-2xl mr-3"></i>
                     <span class="font-medium">mhangwanikarabo@gmail.com</span>
                 </a>
 
-                <!-- GitHub -->
                 <a href="https://github.com/Ndima-karabo17" target="_blank" class="flex items-center justify-center p-4 bg-gray-900 rounded-lg transition duration-300 hover:bg-teal-700/50 hover:text-teal-400 text-white shadow-md">
                     <i class="fab fa-github text-2xl mr-3"></i>
                     <span class="font-medium">View GitHub Profile</span>
@@ -275,15 +272,18 @@
 
     <footer class="bg-gray-800 border-t border-gray-700 mt-10">
         <section class="footerSection container mx-auto p-6 md:p-10 flex flex-col sm:flex-row justify-between items-center text-sm text-gray-400">
-            <div class="paragraph mb-4 sm:mb-0">
-                &copy; 2025 All Rights Reserved.
-            </div>
-            <div class="second">
+            <div class="copyright mb-4 sm:mb-0">
+                &copy; <span id="currentYear">2025</span> All Rights Reserved.
             </div>
         </section>
     </footer>
 
-    <script src="portfolio.js"></script>
+    <script>
+     
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        
+    </script>
 </body>
 
 </html>
