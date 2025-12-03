@@ -13,34 +13,28 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
     <style>
-        /* Base styles for icons and hover transition */
+       
         .devicon-plain {
             font-size: 2.5rem;
             transition: transform 0.3s ease;
         }
         
-        /* Original hover effect (retained for fallback) */
+       
         .tech:hover .devicon-plain {
             transform: scale(1.1);
         }
 
-        /* ----------------------------------- */
-        /* Animation Styles for Cute Effects   */
-        /* ----------------------------------- */
-        
-        /* 1. Pop-up effect on hover (replacing default scale) */
         .tech-pop:hover .devicon-plain {
-            /* Animation applied only on hover */
+         
             animation: pop 0.5s ease-in-out;
         }
 
         @keyframes pop {
             0% { transform: scale(1); }
             50% { transform: scale(1.3) translateY(-5px); }
-            100% { transform: scale(1.1); } /* Ends at a slightly scaled state */
+            100% { transform: scale(1.1); } 
         }
 
-        /* 2. Gentle floating for a "live" feel (applied to select icons) */
         .tech-float .devicon-plain {
             animation: float 4s ease-in-out infinite;
         }
@@ -60,7 +54,6 @@
         <ul class="flex space-x-6">
             <li><a href="#" class="hover:text-teal-400 transition duration-300">Home</a></li>
             <li><a href="#about-me" class="hover:text-teal-400 transition duration-300">About Me</a></li>
-            <li><a href="#certificates" class="hover:text-teal-400 transition duration-300">Certificates</a></li>
             <li><a href="#projects" class="hover:text-teal-400 transition duration-300">Project</a></li>
             <li><a href="#contacts" class="hover:text-teal-400 transition duration-300">Contacts</a></li>
         </ul>
@@ -79,9 +72,9 @@
                 <p class="text-lg text-gray-400 mt-4 leading-relaxed">
                     A software developer and software engineering learner based in South Africa. <br> Currently working on improving my skills.
                 </p>
-                <a href="#" download="Ndima_Mhangwani_Resume.pdf" class="inline-block mt-8 px-6 py-3 bg-teal-500 text-gray-900 font-semibold rounded-lg shadow-lg hover:bg-teal-400 transition duration-300 transform animate-bounce">
-                    Resume
-                </a>
+                <a href="cv.pdf" download="cv.pdf" class="inline-block mt-8 px-6 py-3 bg-teal-500 text-gray-900 font-semibold rounded-lg shadow-lg hover:bg-teal-400 transition duration-300 transform animate-bounce">
+    Resume
+</a>
             </div>
             <div class="picture md:w-1/3">
                 <img src="images/profile.jpg" alt="Ndima Mhangwani professional profile picture" class="rounded-full w-64 h-64 object-cover mx-auto shadow-2xl border-4 border-teal-500">
