@@ -1,1 +1,520 @@
+/* =============================================
+   NDIMA.DEV — Custom Styles (Bootstrap 5 base)
+   Light & Dark mode via [data-bs-theme]
+   ============================================= */
 
+/* ---------- CSS Variables ---------- */
+:root {
+    --teal:       #14b8a6;
+    --teal-hover: #0d9488;
+    --teal-light: rgba(20, 184, 166, 0.12);
+    --teal-glow:  rgba(20, 184, 166, 0.07);
+}
+
+/* ── LIGHT MODE ── */
+[data-bs-theme="light"] {
+    --bg-body:    #f3f4f6;
+    --bg-card:    #ffffff;
+    --bg-nav:     #ffffff;
+    --bg-skills:  rgba(20, 184, 166, 0.05);
+    --border:     #d1d5db;
+    --text-main:  #111827;
+    --text-sub:   #374151;
+    --text-muted: #6b7280;
+    --shadow-sm:  rgba(0, 0, 0, 0.07);
+    --shadow-md:  rgba(0, 0, 0, 0.12);
+}
+
+/* ── DARK MODE ── */
+[data-bs-theme="dark"] {
+    --bg-body:    #111827;
+    --bg-card:    #1f2937;
+    --bg-nav:     #1f2937;
+    --bg-skills:  rgba(255, 255, 255, 0.03);
+    --border:     #374151;
+    --text-main:  #f3f4f6;
+    --text-sub:   #d1d5db;
+    --text-muted: #9ca3af;
+    --shadow-sm:  rgba(0, 0, 0, 0.20);
+    --shadow-md:  rgba(0, 0, 0, 0.35);
+}
+
+/* ---------- Global ---------- */
+html { scroll-behavior: smooth; }
+
+body {
+    background-color: var(--bg-body) !important;
+    color: var(--text-main) !important;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    min-height: 100vh;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Force Bootstrap to use our text colors everywhere */
+p, span, li, label, h1, h2, h3, h4, h5, h6 {
+    color: var(--text-main);
+}
+
+/* ---------- Teal utility ---------- */
+.text-teal { color: var(--teal) !important; }
+
+/* Muted text — override Bootstrap's .text-muted in both modes */
+.text-muted {
+    color: var(--text-muted) !important;
+}
+
+/* ---------- Navbar ---------- */
+#main-nav {
+    background-color: var(--bg-nav) !important;
+    border-bottom: 1px solid var(--border);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.brand-logo {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--teal) !important;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+.brand-logo:hover { opacity: 0.8; }
+
+.nav-link {
+    color: var(--text-main) !important;
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
+}
+.nav-link:hover { color: var(--teal) !important; }
+
+/* Theme toggle */
+.btn-icon {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.5rem;
+    background-color: var(--border);
+    border: none;
+    color: var(--text-main);
+    transition: box-shadow 0.2s ease, background-color 0.2s ease;
+}
+.btn-icon:hover { box-shadow: 0 0 0 2px var(--teal); }
+
+#theme-toggle-light-icon { color: #facc15; }
+#theme-toggle-dark-icon  { color: #374151; }
+
+/* Teal CTA button */
+.btn-teal {
+    background-color: var(--teal);
+    color: #0f172a !important;
+    border: none;
+    border-radius: 0.5rem;
+    transition: background-color 0.25s ease, transform 0.15s ease;
+}
+.btn-teal:hover {
+    background-color: var(--teal-hover);
+    color: #0f172a !important;
+    transform: translateY(-1px);
+}
+
+/* ---------- Hero ---------- */
+.hero-section {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    align-items: center;
+}
+
+.hero-title {
+    font-size: clamp(2.6rem, 6vw, 4.5rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+}
+
+/* The "Ndima Karabo" part — dark on light, light on dark */
+[data-bs-theme="light"] .hero-title .text-light {
+    color: #111827 !important;
+}
+[data-bs-theme="dark"] .hero-title .text-light {
+    color: #f3f4f6 !important;
+}
+
+.hero-sub {
+    font-size: 1.1rem;
+    color: var(--text-sub) !important;
+    max-width: 520px;
+    line-height: 1.75;
+}
+
+/* ---------- Orbit System ---------- */
+.orbit-system {
+    position: relative;
+    /* outer ring diameter = 2 × (ring-3 radius + item clearance) */
+    width:  420px;
+    height: 420px;
+    flex-shrink: 0;
+}
+
+/* Centre image */
+.orbit-center {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.profile-img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--teal);
+    box-shadow: 0 0 0 8px var(--teal-light), 0 20px 40px var(--shadow-md);
+    transition: box-shadow 0.3s ease;
+}
+.profile-img:hover {
+    box-shadow: 0 0 0 10px rgba(20,184,166,0.18), 0 20px 50px rgba(20, 184, 166, 0.35);
+}
+
+/* Each ring sits centred inside .orbit-system */
+.orbit-ring {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 1px dashed rgba(20, 184, 166, 0.25);
+    margin: auto;
+}
+
+/* Ring sizes (diameter) */
+.ring-1 { width: 240px; height: 240px; top: 50%; left: 50%; transform: translate(-50%, -50%); animation: spin  9s linear infinite; }
+.ring-2 { width: 320px; height: 320px; top: 50%; left: 50%; transform: translate(-50%, -50%); animation: spin 15s linear infinite reverse; }
+.ring-3 { width: 410px; height: 410px; top: 50%; left: 50%; transform: translate(-50%, -50%); animation: spin 22s linear infinite; }
+
+@keyframes spin {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to   { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Each skill pill sits on the ring edge, counter-rotated so text stays upright */
+.orbit-item {
+    position: absolute;
+    /* place at the top of the ring then rotate by evenly spaced angle */
+    top:  50%;
+    left: 50%;
+    transform-origin: 0 0;
+    /* angle = (i / total) * 360deg, offset so first item starts at top */
+    transform: rotate(calc((var(--i) / var(--total)) * 360deg))
+               translateY(-50%)          /* move outward (ring radius – half pill) */
+               translateX(-50%);
+}
+
+/* Counter-rotate the label so it's always readable */
+.orbit-item span {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 999px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    white-space: nowrap;
+    background-color: var(--teal-light);
+    color: var(--teal);
+    border: 1px solid rgba(20,184,166,0.35);
+    /* counter-rotate relative to the ring's own spin */
+    animation: counter-spin-slow 22s linear infinite;
+}
+.ring-1 .orbit-item span { animation: counter-spin-fast   9s linear infinite reverse; }
+.ring-2 .orbit-item span { animation: counter-spin-medium 15s linear infinite; }
+.ring-3 .orbit-item span { animation: counter-spin-slow   22s linear infinite reverse; }
+
+@keyframes counter-spin-fast   { from { transform: rotate(0deg);    } to { transform: rotate(-360deg); } }
+@keyframes counter-spin-medium { from { transform: rotate(0deg);    } to { transform: rotate(360deg);  } }
+@keyframes counter-spin-slow   { from { transform: rotate(0deg);    } to { transform: rotate(-360deg); } }
+
+/* Pause on hover for readability */
+.orbit-system:hover .orbit-ring,
+.orbit-system:hover .orbit-item span {
+    animation-play-state: paused;
+}
+
+/* Responsive: shrink on small screens */
+@media (max-width: 768px) {
+    .orbit-system { width: 300px; height: 300px; }
+    .ring-1 { width: 180px; height: 180px; }
+    .ring-2 { width: 240px; height: 240px; }
+    .ring-3 { width: 295px; height: 295px; }
+    .profile-img { width: 130px; height: 130px; }
+    .orbit-item span { font-size: 0.6rem; padding: 2px 7px; }
+}
+
+/* ---------- Section divider ---------- */
+.section-divider {
+    border-color: var(--border);
+    margin: 2.5rem 0;
+}
+
+/* ---------- Section titles ---------- */
+.section-title {
+    font-size: 1.85rem;
+    font-weight: 700;
+    color: var(--text-main) !important;
+}
+
+/* ---------- About summary ---------- */
+.about-summary {
+    max-width: 760px;
+    color: var(--text-sub) !important;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 0.75rem;
+    padding: 1.25rem 1.5rem;
+    line-height: 1.75;
+    box-shadow: 0 2px 10px var(--shadow-sm);
+}
+
+/* ---------- Cards ---------- */
+.card-custom {
+    background-color: var(--bg-card) !important;
+    border: 1px solid var(--border) !important;
+    border-radius: 0.9rem !important;
+    box-shadow: 0 4px 20px var(--shadow-sm);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.card-custom:hover {
+    border-color: var(--teal) !important;
+    box-shadow: 0 8px 28px rgba(20, 184, 166, 0.15);
+}
+
+.card-section-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+/* Timeline border */
+.timeline-item {
+    border-left: 4px solid var(--teal);
+    padding-left: 1rem;
+}
+.timeline-item h4 {
+    color: var(--text-main) !important;
+}
+.timeline-item p {
+    color: var(--text-muted) !important;
+}
+
+/* ---------- Skills section ---------- */
+.skills-section {
+    background-color: var(--bg-skills);
+    border: 1px solid var(--border);
+}
+
+.skills-section .section-title {
+    color: var(--text-main) !important;
+}
+
+.skill-group-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--teal) !important;
+}
+
+.skill-label {
+    font-size: 0.875rem;
+    color: var(--text-sub) !important;
+    transition: color 0.3s ease;
+}
+.skill-item:hover .skill-label {
+    color: var(--teal) !important;
+}
+
+.skill-pct {
+    font-size: 0.75rem;
+    color: var(--teal) !important;
+    font-family: monospace;
+}
+
+.skill-bar {
+    height: 6px;
+    background-color: var(--border);
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+/* ---------- Progress bar animation ---------- */
+@keyframes fillBar {
+    from { width: 0; }
+    to   { width: var(--target-width); }
+}
+
+.progress-fill {
+    height: 100%;
+    border-radius: 999px;
+    background-color: var(--teal);
+    animation: fillBar 1.5s ease-in-out forwards;
+}
+
+/* ---------- Projects ---------- */
+.project-card {
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    overflow: hidden;
+}
+.project-card:hover {
+    transform: translateY(-4px);
+}
+
+.project-card .card-body h3 {
+    color: var(--teal) !important;
+}
+
+.project-card .card-body p {
+    color: var(--text-muted) !important;
+}
+
+.project-code-preview {
+    position: relative;
+    height: 12rem;
+    background-color: var(--bg-body);
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 1.25rem;
+    overflow: hidden;
+}
+
+.project-bg-icon {
+    position: absolute;
+    bottom: 0.5rem;
+    right: 0.75rem;
+    font-size: 4rem;
+    color: var(--teal);
+    opacity: 0.12;
+}
+
+.project-img-wrap {
+    height: 12rem;
+    overflow: hidden;
+    border-bottom: 1px solid var(--border);
+}
+.project-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+.project-card:hover .project-img { transform: scale(1.04); }
+
+.project-link {
+    display: inline-flex;
+    align-items: center;
+    color: var(--text-muted) !important;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s ease;
+}
+.project-link:hover { color: var(--teal) !important; }
+
+/* ---------- Contact section ---------- */
+.contact-section {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border);
+    box-shadow: 0 8px 40px var(--shadow-md);
+}
+
+.contact-glow {
+    position: absolute;
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    background: var(--teal-glow);
+    filter: blur(60px);
+    pointer-events: none;
+}
+.contact-glow-1 { top: -80px;    right: -80px; }
+.contact-glow-2 { bottom: -80px; left: -80px;  }
+
+.contact-section > p {
+    color: var(--text-sub) !important;
+}
+
+.contact-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.85rem;
+    padding: 1.5rem 1rem;
+    border-radius: 0.85rem;
+    border: 1px solid var(--border);
+    background-color: var(--bg-body);
+    text-decoration: none;
+    transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+    height: 100%;
+}
+.contact-card:hover {
+    border-color: var(--teal);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(20, 184, 166, 0.14);
+}
+
+.contact-icon-wrap {
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: var(--teal-light);
+    transition: background-color 0.25s ease;
+}
+.contact-card:hover .contact-icon-wrap {
+    background-color: rgba(20, 184, 166, 0.22);
+}
+
+.contact-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--text-muted) !important;
+    margin: 0;
+}
+
+.contact-value {
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--text-main) !important;
+    margin: 0;
+    word-break: break-all;
+    transition: color 0.2s ease;
+}
+.contact-card:hover .contact-value { color: var(--teal) !important; }
+
+/* ---------- Footer ---------- */
+.site-footer {
+    background-color: var(--bg-nav) !important;
+    border-top: 1px solid var(--border);
+    transition: background-color 0.3s ease;
+}
+
+.site-footer p {
+    color: var(--text-muted) !important;
+}
+
+/* ---------- Devicon animations ---------- */
+.devicon-plain {
+    font-size: 2.5rem;
+    transition: transform 0.3s ease;
+}
+.tech:hover .devicon-plain { transform: scale(1.1); }
+
+@keyframes pop {
+    0%   { transform: scale(1); }
+    50%  { transform: scale(1.3) translateY(-5px); }
+    100% { transform: scale(1.1); }
+}
+.tech-pop:hover .devicon-plain { animation: pop 0.5s ease-in-out; }
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50%       { transform: translateY(-5px); }
+}
+.tech-float .devicon-plain { animation: float 4s ease-in-out infinite; }
