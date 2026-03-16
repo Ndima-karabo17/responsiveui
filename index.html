@@ -33,6 +33,53 @@
             opacity: 1;
         }
  
+        /* Tech stack badges on project cards */
+        .tech-badge {
+            display: inline-block;
+            padding: 0.25rem 0.65rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.03em;
+            background: rgba(32, 201, 151, 0.12);
+            color: #20c997;
+            border: 1px solid rgba(32, 201, 151, 0.3);
+        }
+ 
+        /* Skill icon badges */
+        .skill-badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.3rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            color: var(--bs-light, #f8f9fa);
+            transition: background 0.2s ease, border-color 0.2s ease;
+        }
+ 
+        .skill-badge:hover {
+            background: rgba(32, 201, 151, 0.1);
+            border-color: rgba(32, 201, 151, 0.4);
+        }
+ 
+        /* GitHub CTA link */
+        .github-cta {
+            display: inline-flex;
+            align-items: center;
+            color: var(--bs-secondary-color, #adb5bd);
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+ 
+        .github-cta:hover {
+            color: #20c997;
+        }
+ 
         /* View More button styling */
         .btn-view-more {
             display: inline-flex;
@@ -95,6 +142,8 @@
             <ul class="navbar-nav flex-row gap-3 d-none d-md-flex me-2">
                 <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
                 <li class="nav-item"><a href="#about-me" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
+                <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
             </ul>
  
             <button id="theme-toggle" class="btn btn-icon" title="Toggle theme">
@@ -117,7 +166,7 @@
                     <span class="text-teal">Mhangwani</span>
                 </h1>
                 <p class="hero-sub mt-4">
-                    Full-Stack Developer who turns real business problems into clean, working software.
+                    Software Developer who turns real business problems into clean, working software.
                     During my apprenticeship at mLab Southern Africa, I collaborated with local businesses to
                     design and ship digital solutions — from writing requirement specs and database designs to
                     delivering features end-to-end in an Agile team. I hold a Diploma in Computer Science (TUT)
@@ -143,14 +192,15 @@
         <hr class="section-divider">
  
         <!-- ABOUT / EXPERIENCE / EDUCATION -->
-        
         <section class="py-5" id="about-me">
             <h2 class="section-title text-center mb-3">About Me, Education, and Experience</h2>
             <p class="about-summary text-center mx-auto mb-5">
-                My immediate goal is to secure a Graduate or Junior Software Developer role where I can gain
-                industry experience and continue improving my software development skills.
-                I want to keep learning new technologies and work on real world projects. In the future,
-                I aim to grow into a Senior Software Developer and build reliable software solutions. </p>
+                I am a Software Developer with hands-on experience delivering real software for real clients.
+                I bring a solid academic grounding in Computer Science, enterprise Java, and databases — combined
+                with practical Agile team experience from my apprenticeship at mLab Southern Africa. I write clean,
+                documented code, communicate well in a team, and take ownership of what I ship. I am ready to
+                contribute from day one in a Graduate or Junior Developer role.
+            </p>
  
             <div class="row g-4">
                 <div class="col-lg-6">
@@ -196,125 +246,80 @@
                 </div>
             </div>
         </section>
-
+ 
         <!-- SKILLS -->
         <section class="skills-section py-5 rounded-4 mb-4" id="skills">
-            <h2 class="section-title text-center text-light mb-5">Technical Expertise</h2>
-
-            <div class="row g-5 px-3 px-md-4">
-
-                <!-- Backend -->
+            <h2 class="section-title text-center text-light mb-2">Technical Expertise</h2>
+            <p class="text-center text-muted mb-5" style="font-size:0.95rem;">Technologies I work with, grouped by proficiency.</p>
+ 
+            <div class="row g-4 px-3 px-md-4">
+ 
+                <!-- Proficient -->
                 <div class="col-md-4">
-                    <h3 class="skill-group-title text-teal mb-4">
-                        <i class="fas fa-server me-2"></i> Back-end & Data
-                    </h3>
-                    <div class="skill-item mb-4">
-                        <div class="d-flex justify-content-between mb-1">
-                            <span class="skill-label">Java</span>
-                            <span class="skill-pct">90%</span>
-                        </div>
-                        <div class="progress skill-bar">
-                            <div class="progress-fill" style="--target-width: 90%; width: 90%;"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item mb-4">
-                        <div class="d-flex justify-content-between mb-1">
-                            <span class="skill-label">Node.js</span>
-                            <span class="skill-pct">85%</span>
-                        </div>
-                        <div class="progress skill-bar">
-                            <div class="progress-fill" style="--target-width: 85%; width: 85%;"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item mb-4">
-                        <div class="d-flex justify-content-between mb-1">
-                            <span class="skill-label">PostgreSQL & MySQL</span>
-                            <span class="skill-pct">88%</span>
-                        </div>
-                        <div class="progress skill-bar">
-                            <div class="progress-fill" style="--target-width: 88%; width: 88%;"></div>
+                    <div class="card card-custom h-100 p-4">
+                        <h3 class="skill-group-title text-teal mb-1" style="font-size:1rem;text-transform:uppercase;letter-spacing:.08em;">
+                            <i class="fas fa-bolt me-2"></i> Proficient
+                        </h3>
+                        <p class="text-muted mb-4" style="font-size:0.8rem;">Use confidently in projects</p>
+                        <div class="d-flex flex-wrap gap-2">
+                            <span class="skill-badge"><i class="devicon-java-plain colored me-1"></i>Java</span>
+                            <span class="skill-badge"><i class="devicon-typescript-plain colored me-1"></i>TypeScript</span>
+                            <span class="skill-badge"><i class="devicon-nodejs-plain colored me-1"></i>Node.js</span>
+                            <span class="skill-badge"><i class="devicon-postgresql-plain colored me-1"></i>PostgreSQL</span>
+                            <span class="skill-badge"><i class="devicon-mysql-plain colored me-1"></i>MySQL</span>
+                            <span class="skill-badge"><i class="devicon-bootstrap-plain colored me-1"></i>Bootstrap</span>
+                            <span class="skill-badge"><i class="devicon-css3-plain colored me-1"></i>CSS3</span>
                         </div>
                     </div>
                 </div>
-
-                <!-- Core Languages -->
+ 
+                <!-- Comfortable -->
                 <div class="col-md-4">
-                    <h3 class="skill-group-title text-teal mb-4">
-                        <i class="fas fa-code me-2"></i> Core Languages
-                    </h3>
-                    <div class="skill-item mb-4">
-                        <div class="d-flex justify-content-between mb-1">
-                            <span class="skill-label">TypeScript</span>
-                            <span class="skill-pct">85%</span>
-                        </div>
-                        <div class="progress skill-bar">
-                            <div class="progress-fill" style="--target-width: 85%; width: 85%;"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item mb-4">
-                        <div class="d-flex justify-content-between mb-1">
-                            <span class="skill-label">JavaScript</span>
-                            <span class="skill-pct">70%</span>
-                        </div>
-                        <div class="progress skill-bar">
-                            <div class="progress-fill" style="--target-width: 80%; width: 80%;"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item mb-4">
-                        <div class="d-flex justify-content-between mb-1">
-                            <span class="skill-label">Python</span>
-                            <span class="skill-pct">82%</span>
-                        </div>
-                        <div class="progress skill-bar">
-                            <div class="progress-fill" style="--target-width: 82%; width: 82%;"></div>
+                    <div class="card card-custom h-100 p-4">
+                        <h3 class="skill-group-title mb-1" style="font-size:1rem;text-transform:uppercase;letter-spacing:.08em;color:#f0c060;">
+                            <i class="fas fa-laptop-code me-2"></i> Comfortable
+                        </h3>
+                        <p class="text-muted mb-4" style="font-size:0.8rem;">Work with regularly</p>
+                        <div class="d-flex flex-wrap gap-2">
+                            <span class="skill-badge"><i class="devicon-react-original colored me-1"></i>React</span>
+                            <span class="skill-badge"><i class="devicon-react-original colored me-1"></i>React Native</span>
+                            <span class="skill-badge"><i class="devicon-javascript-plain colored me-1"></i>JavaScript</span>
+                            <span class="skill-badge"><i class="devicon-python-plain colored me-1"></i>Python</span>
+                            <span class="skill-badge"><i class="devicon-express-original me-1"></i>Express.js</span>
+                            <span class="skill-badge"><i class="devicon-html5-plain colored me-1"></i>HTML5</span>
                         </div>
                     </div>
                 </div>
-
-                <!-- Frontend -->
+ 
+                <!-- Familiar -->
                 <div class="col-md-4">
-                    <h3 class="skill-group-title text-teal mb-4">
-                        <i class="fas fa-layer-group me-2"></i> Frontend & Tools
-                    </h3>
-                    <div class="skill-item mb-4">
-                        <div class="d-flex justify-content-between mb-1">
-                            <span class="skill-label">React</span>
-                            <span class="skill-pct">80%</span>
-                        </div>
-                        <div class="progress skill-bar">
-                            <div class="progress-fill" style="--target-width: 80%; width: 80%;"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item mb-4">
-                        <div class="d-flex justify-content-between mb-1">
-                            <span class="skill-label">React Native</span>
-                            <span class="skill-pct">80%</span>
-                        </div>
-                        <div class="progress skill-bar">
-                            <div class="progress-fill" style="--target-width: 80%; width: 80%;"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item mb-4">
-                        <div class="d-flex justify-content-between mb-1">
-                            <span class="skill-label">Bootstrap & CSS</span>
-                            <span class="skill-pct">95%</span>
-                        </div>
-                        <div class="progress skill-bar">
-                            <div class="progress-fill" style="--target-width: 95%; width: 95%;"></div>
+                    <div class="card card-custom h-100 p-4">
+                        <h3 class="skill-group-title mb-1" style="font-size:1rem;text-transform:uppercase;letter-spacing:.08em;color:#a78bfa;">
+                            <i class="fas fa-tools me-2"></i> Tools & Practices
+                        </h3>
+                        <p class="text-muted mb-4" style="font-size:0.8rem;">Part of my daily workflow</p>
+                        <div class="d-flex flex-wrap gap-2">
+                            <span class="skill-badge"><i class="devicon-git-plain colored me-1"></i>Git</span>
+                            <span class="skill-badge"><i class="devicon-github-original me-1"></i>GitHub</span>
+                            <span class="skill-badge"><i class="devicon-vscode-plain colored me-1"></i>VS Code</span>
+                            <span class="skill-badge"><i class="fas fa-sync-alt me-1"></i>Agile / Scrum</span>
+                            <span class="skill-badge"><i class="fas fa-file-alt me-1"></i>Technical Docs</span>
+                            <span class="skill-badge"><i class="fas fa-shield-alt me-1"></i>Java EE Security</span>
+                            <span class="skill-badge"><i class="fas fa-cubes me-1"></i>EJB</span>
                         </div>
                     </div>
                 </div>
-
+ 
             </div>
         </section>
-
+ 
         <!-- PROJECTS -->
         <section class="py-5" id="projects">
             <h2 class="section-title text-center mb-5">Featured Projects</h2>
-
+ 
             <!-- Always-visible projects -->
             <div class="row g-4">
-
+ 
                 <div class="col-md-6">
                     <div class="card card-custom project-card h-100">
                         <div class="project-code-preview">
@@ -324,18 +329,21 @@
                         </div>
                         <div class="card-body p-4 d-flex flex-column">
                             <h3 class="text-teal fs-4 fw-semibold mb-2">Library API</h3>
-                            <p class="text-muted flex-grow-1">A RESTful API built with TypeScript + Express.js that
-                                manages a community library’s Authors and Books. This API supports CRUD operations,
-                                validation, error handling, and logging, enabling librarians to efficiently manage book
-                                and author records.</p>
+                            <p class="text-muted">A RESTful API built with TypeScript and Express.js.</p>
+                            <div class="d-flex flex-wrap gap-2 mb-3">
+                                <span class="tech-badge">TypeScript</span>
+                                <span class="tech-badge">Express.js</span>
+                                <span class="tech-badge">Node.js</span>
+                                <span class="tech-badge">REST API</span>
+                            </div>
                             <a href="https://github.com/Ndima-karabo17/LibraryAPI.git" target="_blank"
-                                class="project-link">
+                                class="project-link mt-auto">
                                 <i class="fab fa-github me-2"></i> GitHub Repo
                             </a>
                         </div>
                     </div>
                 </div>
-
+ 
                 <div class="col-md-6">
                     <div class="card card-custom project-card h-100">
                         <div class="project-img-wrap">
@@ -344,24 +352,25 @@
                         </div>
                         <div class="card-body p-4 d-flex flex-column">
                             <h3 class="text-teal fs-4 fw-semibold mb-2">UI Challenge – React</h3>
-                            <p class="text-muted flex-grow-1">The primary focus of this project was to transition from a
-                                document-based structure to a component-based architecture. By using React and
-                                TypeScript,
-                                I’ve improved the maintainability and scalability of the original design without
-                                changing the user interface.</p>
-                            <a href="https://ui-challange-liard.vercel.app/" target="_blank" class="project-link">
+                            <p class="text-muted">Replicating a complex UI design with pixel-perfect CSS.</p>
+                            <div class="d-flex flex-wrap gap-2 mb-3">
+                                <span class="tech-badge">React</span>
+                                <span class="tech-badge">CSS3</span>
+                                <span class="tech-badge">Responsive Design</span>
+                            </div>
+                            <a href="https://ui-challange-liard.vercel.app/" target="_blank" class="project-link mt-auto">
                                 <i class="fa-solid fa-link me-2"></i> Live Demo
                             </a>
                         </div>
                     </div>
                 </div>
-
+ 
             </div>
-
-            <!-- Extra projects (hidden by default) -->
-            <div id="extra-projects">
+ 
+            <!-- Extra projects -->
+            <div id="extra-projects" class="expanded">
                 <div class="row g-4 mt-0">
-
+ 
                     <div class="col-md-6">
                         <div class="card card-custom project-card h-100">
                             <div class="project-code-preview">
@@ -371,19 +380,21 @@
                             </div>
                             <div class="card-body p-4 d-flex flex-column">
                                 <h3 class="text-teal fs-4 fw-semibold mb-2">Collaborative Code Review Platform</h3>
-                                <p class="text-muted flex-grow-1">An API-driven tool for sharing code and receiving
-                                    real-time feedback. It streamlines peer reviews with secure user management, project
-                                    organization, and collaboration features.</p>
-                                <a href="https://github.com/Ndima-karabo17/CollaborativeCodeReviewPlatform.git"
-                                    target="_blank" class="project-link">
+                                <p class="text-muted">An API-driven tool for sharing code and receiving real-time feedback. Streamlines peer reviews with secure user management, project organisation, and collaboration features.</p>
+                                <div class="d-flex flex-wrap gap-2 mb-3">
+                                    <span class="tech-badge">Node.js</span>
+                                    <span class="tech-badge">TypeScript</span>
+                                    <span class="tech-badge">PostgreSQL</span>
+                                    <span class="tech-badge">REST API</span>
+                                    <span class="tech-badge">Auth</span>
+                                </div>
+                                <a href="https://github.com/Ndima-karabo17" target="_blank" class="project-link mt-auto">
                                     <i class="fab fa-github me-2"></i> GitHub Repo
                                 </a>
-
-
                             </div>
                         </div>
                     </div>
-
+ 
                     <div class="col-md-6">
                         <div class="card card-custom project-card h-100">
                             <div class="project-img-wrap">
@@ -391,58 +402,69 @@
                                     alt="React Native App" class="project-img">
                             </div>
                             <div class="card-body p-4 d-flex flex-column">
-                                <h3 class="text-teal fs-4 fw-semibold mb-2">React Native Mobile App</h3>
-                                <p class="text-muted flex-grow-1">A full-featured Shopping List web app built with React
-                                    and TypeScript,
-                                    using Redux for state management and json-server for data persistence. Includes user
-                                    authentication,
-                                    protected routing, CRUD operations for shopping lists, and URL-based search and sort
-                                    functionality.</p> <a
-                                    href="https://github.com/Ndima-karabo17/React-Native-ShoppingListApp.git"
-                                    target="_blank" class="project-link">
+                                <h3 class="text-teal fs-4 fw-semibold mb-2">Shopping List App</h3>
+                                <p class="text-muted">A full-featured Shopping List web app with user authentication, protected routing, CRUD operations, and URL-based search and sort functionality.</p>
+                                <div class="d-flex flex-wrap gap-2 mb-3">
+                                    <span class="tech-badge">React</span>
+                                    <span class="tech-badge">TypeScript</span>
+                                    <span class="tech-badge">Redux</span>
+                                    <span class="tech-badge">json-server</span>
+                                    <span class="tech-badge">Auth</span>
+                                </div>
+                                <a href="https://github.com/Ndima-karabo17" target="_blank" class="project-link mt-auto">
                                     <i class="fab fa-github me-2"></i> GitHub Repo
                                 </a>
                             </div>
                         </div>
                     </div>
-
+ 
                 </div>
             </div>
-
+ 
             <!-- View More / View Less Button -->
             <div class="text-center mt-5">
-                <button id="view-more-btn" class="btn-view-more" aria-expanded="false">
-                    <span class="btn-label">View More Projects</span>
+                <button id="view-more-btn" class="btn-view-more open" aria-expanded="true">
+                    <span class="btn-label">View Less</span>
                     <i class="fas fa-chevron-down btn-icon-arrow"></i>
                 </button>
             </div>
-
+ 
+            <!-- GitHub CTA -->
+            <div class="text-center mt-4">
+                <a href="https://github.com/Ndima-karabo17?tab=repositories" target="_blank" rel="noopener noreferrer"
+                   class="github-cta">
+                    <i class="fab fa-github me-2"></i>
+                    See all my repositories on GitHub
+                    <i class="fas fa-arrow-right ms-2" style="font-size:0.8rem;"></i>
+                </a>
+            </div>
+ 
         </section>
-
+ 
         <!-- CONTACTS -->
         <section id="contacts"
             class="contact-section py-5 rounded-4 text-center mb-5 position-relative overflow-hidden">
             <div class="contact-glow contact-glow-1"></div>
             <div class="contact-glow contact-glow-2"></div>
-
+ 
             <h2 class="section-title text-teal mb-2 position-relative">Get in Touch</h2>
             <p class="text-muted mx-auto mb-5 position-relative" style="max-width: 480px;">
                 I'm currently seeking Graduate or Junior Software Developer role. Feel free to reach out — I'd love to
                 connect.
             </p>
-
+ 
             <div class="row g-4 justify-content-center position-relative" style="max-width: 780px; margin: 0 auto;">
-
+ 
                 <div class="col-12 col-sm-4">
-                    <a href="mailto:mhangwanikarabo@gmail.com" class="contact-card">
+                    <a href="/cdn-cgi/l/email-protection#432e2b222d2434222d2a28223122212c03242e222a2f6d202c2e" class="contact-card">
                         <div class="contact-icon-wrap">
                             <i class="fas fa-envelope fs-4 text-teal"></i>
                         </div>
                         <p class="contact-label">Email</p>
-                        <p class="contact-value">mhangwanikarabo@gmail.com</p>
+                        <p class="contact-value"><span class="__cf_email__" data-cfemail="e38e8b828d8494828d8a88829182818ca3848e828a8fcd808c8e">[email&#160;protected]</span></p>
                     </a>
                 </div>
-
+ 
                 <div class="col-12 col-sm-4">
                     <a href="http://www.linkedin.com/in/ndima-mhangwani-4761b332a" target="_blank"
                         rel="noopener noreferrer" class="contact-card">
@@ -453,7 +475,7 @@
                         <p class="contact-value">Ndima Mhangwani</p>
                     </a>
                 </div>
-
+ 
                 <div class="col-12 col-sm-4">
                     <a href="https://github.com/Ndima-karabo17" target="_blank" rel="noopener noreferrer"
                         class="contact-card">
@@ -464,10 +486,10 @@
                         <p class="contact-value">Ndima-karabo17</p>
                     </a>
                 </div>
-
+ 
             </div>
         </section>
-
+ 
     </main>
 
     <!-- FOOTER -->
