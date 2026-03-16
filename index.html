@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="dark">
-
+ 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ndima's Portfolio</title>
-
+ 
     <!-- Bootstrap 5 -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-
+ 
     <!-- Devicons -->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
-
+ 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+ 
     <!-- Custom Styles -->
     <link rel="stylesheet" href="Styles.css">
-
+ 
     <style>
         /* Extra projects hidden by default */
         #extra-projects {
@@ -27,12 +27,12 @@
             opacity: 0;
             transition: max-height 0.6s ease, opacity 0.5s ease;
         }
-
+ 
         #extra-projects.expanded {
             max-height: 1000px;
             opacity: 1;
         }
-
+ 
         /* View More button styling */
         .btn-view-more {
             display: inline-flex;
@@ -47,68 +47,67 @@
             letter-spacing: 0.04em;
             transition: background 0.25s ease, color 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
         }
-
+ 
         .btn-view-more:hover {
             background: var(--bs-teal, #20c997);
             color: #0d1117;
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(32, 201, 151, 0.35);
         }
-
+ 
         .btn-view-more .btn-icon-arrow {
             transition: transform 0.35s ease;
         }
-
+ 
         .btn-view-more.open .btn-icon-arrow {
             transform: rotate(180deg);
         }
-
+ 
         /* Subtle entrance animation for extra cards */
         @keyframes slideUp {
             from {
                 opacity: 0;
                 transform: translateY(24px);
             }
-
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
-
+ 
         #extra-projects.expanded .col-md-6 {
             animation: slideUp 0.45s ease both;
         }
-
+ 
         #extra-projects.expanded .col-md-6:nth-child(2) {
             animation-delay: 0.1s;
         }
     </style>
 </head>
-
+ 
 <body>
-
+ 
     <!-- NAVBAR -->
     <nav class="navbar navbar-expand-md sticky-top px-3 px-md-5 shadow-sm" id="main-nav">
         <a class="navbar-brand brand-logo" href="#">{ Ndima.dev }</a>
-
+ 
         <div class="ms-auto d-flex align-items-center gap-3">
             <ul class="navbar-nav flex-row gap-3 d-none d-md-flex me-2">
                 <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
                 <li class="nav-item"><a href="#about-me" class="nav-link">About</a></li>
             </ul>
-
+ 
             <button id="theme-toggle" class="btn btn-icon" title="Toggle theme">
                 <i id="theme-toggle-dark-icon" class="fa-solid fa-moon d-none"></i>
                 <i id="theme-toggle-light-icon" class="fa-solid fa-sun d-none"></i>
             </button>
-
+ 
             <a href="#contacts" class="btn btn-teal fw-semibold">Contacts</a>
         </div>
     </nav>
-
+ 
     <main class="container px-3 px-md-5">
-
+ 
         <!-- HERO -->
         <section
             class="hero-section d-flex flex-column flex-md-row align-items-center justify-content-between py-5 gap-5">
@@ -118,13 +117,12 @@
                     <span class="text-teal">Mhangwani</span>
                 </h1>
                 <p class="hero-sub mt-4">
-                    I am a motivated software developer with a Diploma in Computer Science and I am currently studying
-                    towards an Advanced Diploma.
-                    I completed a 9-months apprenticeship at CodeTribe Academy (mLab Southern Africa) where I gained
-                    practical experience in software
-                    development. I enjoy building applications, solving problems, and learning new technologies. I am
-                    eager to gain more experience and
-                    grow in the tech industry.
+                    Full-Stack Developer who turns real business problems into clean, working software.
+                    During my apprenticeship at mLab Southern Africa, I collaborated with local businesses to
+                    design and ship digital solutions — from writing requirement specs and database designs to
+                    delivering features end-to-end in an Agile team. I hold a Diploma in Computer Science (TUT)
+                    and am currently advancing to an Advanced Diploma. I build things that work, document
+                    what I build, and keep learning every day.
                 </p>
                 <div class="d-flex gap-3 mt-4 flex-wrap">
                     <a href="#projects" class="btn btn-teal fw-bold px-4 py-2">View Projects</a>
@@ -133,18 +131,19 @@
             </div>
             <!-- Orbiting Skills -->
             <div class="orbit-system">
-
+ 
                 <!-- Profile image at centre -->
                 <div class="orbit-center">
                     <img src="images/profile.png" alt="Ndima Mhangwani" class="profile-img">
                 </div>
-
+ 
             </div>
         </section>
-
+ 
         <hr class="section-divider">
-
+ 
         <!-- ABOUT / EXPERIENCE / EDUCATION -->
+        
         <section class="py-5" id="about-me">
             <h2 class="section-title text-center mb-3">About Me, Education, and Experience</h2>
             <p class="about-summary text-center mx-auto mb-5">
@@ -152,7 +151,7 @@
                 industry experience and continue improving my software development skills.
                 I want to keep learning new technologies and work on real world projects. In the future,
                 I aim to grow into a Senior Software Developer and build reliable software solutions. </p>
-
+ 
             <div class="row g-4">
                 <div class="col-lg-6">
                     <div class="card card-custom h-100">
@@ -162,8 +161,15 @@
                             </h3>
                             <div class="timeline-item">
                                 <h4 class="fw-medium fs-5">FullStack Developer Apprentice</h4>
-                                <p class="text-muted mt-1 mb-0 fw-semibold">mlab Southern Africa | July 2025 – March
-                                    2026</p>
+                                <p class="text-muted mt-1 fw-semibold">mLab Southern Africa (CodeTribe Academy) | July 2025 – March 2026</p>
+                                <ul class="mt-2 ps-3" style="line-height: 1.85; color: var(--bs-secondary-color, #adb5bd); font-size: 0.92rem;">
+                                    <li>Partnered with a local small business to gather requirements and deliver a tailored digital solution from concept to deployment.</li>
+                                    <li>Developed full-stack applications adhering to design specifications and business requirements for real external customers.</li>
+                                    <li>Authored requirement specifications, database design documents, and system integration plans across multiple projects.</li>
+                                    <li>Performed refactoring, debugging, and feature implementation to maintain code quality and meet evolving client needs.</li>
+                                    <li>Participated in all Scrum ceremonies — daily stand-ups, sprint planning, reviews, and retrospectives — within an Agile team.</li>
+                                    <li>Produced process documentation and user guides to ensure quality and knowledge transfer.</li>
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -176,8 +182,14 @@
                             </h3>
                             <div class="timeline-item">
                                 <h4 class="fw-medium fs-5">National Diploma in Computer Science</h4>
-                                <p class="text-muted mt-1 mb-0 fw-semibold">Tshwane University of Technology (TUT) |
-                                    2022 – 2025</p>
+                                <p class="text-muted mt-1 fw-semibold">Tshwane University of Technology (TUT) | 2022 – 2025</p>
+                                <ul class="mt-2 ps-3" style="line-height: 1.85; color: var(--bs-secondary-color, #adb5bd); font-size: 0.92rem;">
+                                    <li>Built a strong foundation in <strong>Object-Oriented Programming (OOP)</strong> and <strong>Data Structures</strong> using Java — covering inheritance, polymorphism, encapsulation, linked lists, trees, and sorting algorithms.</li>
+                                    <li>Developed enterprise Java applications using <strong>Java Servlets</strong> for server-side request handling and dynamic web content generation.</li>
+                                    <li>Studied <strong>Enterprise JavaBeans (EJB)</strong> for building secure, scalable business logic components in a managed server environment.</li>
+                                    <li>Applied <strong>Java EE security</strong> principles including authentication, authorisation, and role-based access control in enterprise applications.</li>
+                                    <li>Worked with <strong>SQL</strong> for relational database design, query optimisation, and data management across multiple projects.</li>
+                                </ul>
                             </div>
                         </div>
                     </div>
